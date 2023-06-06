@@ -1426,7 +1426,7 @@ strong {
   width: 48px;
   height: 48px;
   border-radius: 50%;
-  border: 1px solid #fff;
+  border: 1.5px solid #fff;
   color: #fff;
   font-size: 14px;
   font-weight: 500;
@@ -1439,7 +1439,7 @@ strong {
   position: relative;
 }
 .card-prize__info-users .ava {
-  border: 1px solid #fff;
+  border: 1.5px solid #fff;
 }
 .card-prize__info-users .ava:not(:first-child) {
   margin-left: -18px;
