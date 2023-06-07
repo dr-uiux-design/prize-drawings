@@ -19,41 +19,85 @@ anchors.forEach(anchor => {
 });
 
 
-$(window).on('resize', function (e) {
-	const initSlider = $('.mob-slider').data('init-slider');
+/* ------------------- Modals -------------------- */
+const modalBtn = document.querySelectorAll('.js-modal-btn');
+const modals = document.querySelectorAll('.modal');
 
-	if (window.innerWidth < 992) {
-		if (initSlider !== 1) {
-			$('.mob-slider').slick({
-				arrows: false,
-				dots: true,
-				slidesToShow: 3,
-				slidesToScroll: 3,
-				responsive: [{
-						breakpoint: 769,
-						settings: {
-							slidesToShow: 2,
-							slidesToScroll: 2,
-						}
-					},
-					{
-						breakpoint: 481,
-						settings: {
-							slidesToShow: 1,
-							slidesToScroll: 1,
-						}
-					},
-				]
-			}).data('init-slider', 1);
-		}
+function openModal(elem) {
+	elem.classList.add('is-active');
+	if (hasScrollbar()) {
+		body.style.width = `calc(100vw - ${window.innerWidth - document.documentElement.clientWidth}px)`;
 	}
-	// Если десктоп
-	else {
-		// Если слайдер запущен
-		if (initSlider === 1) {
-			// Разрушаем слайдер и записываем в data init-slider = 0
-			$('.mob-slider').slick('unslick').data('init-slider', 0);
+	body.style.overflow = 'hidden';
+}
+
+function closeModal(e) {
+	if (e.target.classList.contains('modal__close') || e.target.closest('.modal__close') || e.target.classList.contains('modal__overlay')) {
+		e.target.closest('.modal').classList.remove('is-active');
+		body.style.overflow = '';
+		body.style.width = '';
+	}
+}
+
+function hasScrollbar() {
+	return document.body.scrollHeight > window.innerHeight;
+}
+
+modalBtn.forEach(btn => {
+	btn.addEventListener('click', (e) => {
+		let data = e.target.dataset.modalOpen;
+
+		modals.forEach(modal => {
+			if (modal.dataset.modal == data || modal.dataset.modal == e.target.closest('.js-modal-btn').dataset.modalOpen) {
+				openModal(modal)
+			}
+		})
+	})
+})
+
+modals.forEach(modal => {
+	modal.addEventListener('click', e => closeModal(e))
+})
+
+window.addEventListener('keydown', e => {
+	modals.forEach(modal => {
+		if (e.key === "Escape" && modal.classList.contains('is-active')) {
+			modal.classList.remove('is-active');
+			body.style.overflow = '';
+			body.style.width = '';
 		}
+	})
+})
+/* ------------------- / Modals -------------------- */
+
+// Prize Slider Mobile
+let initSlider = 0;
+
+$(window).on('resize', function (e) {
+	if (window.innerWidth < 992 && initSlider !== 1) {
+		$('.mob-slider').slick({
+			arrows: false,
+			dots: true,
+			slidesToShow: 3,
+			slidesToScroll: 3,
+			responsive: [{
+				breakpoint: 769,
+				settings: {
+					slidesToShow: 2,
+					slidesToScroll: 2,
+				}
+			}, {
+				breakpoint: 481,
+				settings: {
+					slidesToShow: 1,
+					slidesToScroll: 1,
+				}
+			}, ]
+		});
+		initSlider = 1;
+	} else if (window.innerWidth >= 992 && initSlider === 1) {
+		$('.mob-slider').slick('unslick');
+		initSlider = 0;
 	}
 }).trigger('resize');
 
@@ -62,16 +106,99 @@ $(window).on('resize', function (e) {
 const btnDrawingsMore = document.querySelector('#drawingsMore');
 const drawingsHidden = document.querySelector('.drawings__hidden');
 
-// btnDrawingsMore.addEventListener('click', () => {
-// 	drawingsHidden.classList.add('active');
-// });
+btnDrawingsMore.addEventListener("click", function () {
+	if (drawingsHidden.style.display === "none") {
+		drawingsHidden.style.display = "block";
+		btnDrawingsMore.innerText = "Сollapse";
+	} else {
+		drawingsHidden.style.display = "none";
+		btnDrawingsMore.innerText = "View all";
+	}
+});
 
-btnDrawingsMore.addEventListener("click", function() {
-  if (drawingsHidden.style.display === "none") {
-    drawingsHidden.style.display = "block";
-    btnDrawingsMore.innerText = "Сollapse";
-  } else {
-    drawingsHidden.style.display = "none";
-    btnDrawingsMore.innerText = "View all";
-  }
+// Попап Аккаунта в шапке
+const userAccount = document.querySelector('.user-account');
+const popupSettings = document.querySelector('.popup-settings');
+
+userAccount.addEventListener('click', () => {
+	popupSettings.classList.toggle('active');
+	userAccount.classList.toggle('active');
+});
+
+// Добавляем обработчик клика на документ
+document.addEventListener('click', (event) => {
+	if (!event.target.closest('.user-account') && popupSettings.classList.contains('active')) {
+		popupSettings.classList.remove('active');
+		userAccount.classList.remove('active'); // убираем класс active у кнопки
+	}
+});
+
+/* ------------------- Edit Profile -------------------- */
+
+
+const editBtn = document.querySelector('#edit-btn');
+const updateBtn = document.querySelector('#update-btn');
+const profileInputs = document.querySelectorAll('.input-profile');
+const uploadAva = document.querySelector('.upload-ava');
+const uploadAvaInfo = document.querySelector('.upload-ava-info');
+const passwordRepeat = document.querySelector('.password-repeat');
+
+editBtn.addEventListener('click', () => {
+	profileInputs.forEach(input => input.removeAttribute('disabled'));
+	editBtn.classList.add('is-hidden');
+	updateBtn.classList.remove('is-hidden');
+	uploadAva.classList.remove('is-hidden');
+	passwordRepeat.classList.remove('is-hidden');
+	uploadAvaInfo.classList.remove('is-hidden');
+});
+
+updateBtn.addEventListener('click', () => {
+	profileInputs.forEach(input => input.setAttribute('value', input.value));
+	profileInputs.forEach(input => input.setAttribute('disabled', true));
+	updateBtn.classList.add('is-hidden');
+	editBtn.classList.remove('is-hidden');
+	uploadAva.classList.add('is-hidden');
+	passwordRepeat.classList.add('is-hidden');
+	uploadAvaInfo.classList.add('is-hidden');
+});
+
+/* ------------------- Замена аватарки в профиле -------------------- */
+const uploadBtn = document.querySelector('.upload-ava');
+const avatarDefault = document.querySelector('#avaDefault');
+const avatarNew = document.querySelector('.profile-form__ava');
+
+uploadBtn.addEventListener('click', function () {
+	const input = document.createElement('input');
+	input.type = 'file';
+	input.accept = 'image/*';
+	input.onchange = function () {
+		const file = this.files[0];
+		const reader = new FileReader();
+		reader.readAsDataURL(file);
+		reader.onload = function () {
+			avatarDefault.style.display = 'none';
+			avatarNew.style.backgroundImage = `url(${this.result})`;
+			avatarNew.classList.add('avatar-uploaded');
+			uploadAva.classList.add('border');
+		}
+	}
+	input.click();
+});
+
+/* ------------------- Показать / Скрыть пароль  -------------------- */
+const passwordIcon = document.querySelectorAll('.ic-password');
+const passwordInput = document.querySelectorAll('.input-password');
+
+passwordIcon.forEach(function (icon, index) {
+	icon.addEventListener('click', function () {
+		if (passwordInput[index].type === 'password') {
+			passwordInput[index].type = 'text';
+			icon.classList.remove('pass-yes');
+			icon.classList.add('pass-no');
+		} else {
+			passwordInput[index].type = 'password';
+			icon.classList.remove('pass-no');
+			icon.classList.add('pass-yes');
+		}
+	});
 });

@@ -59,6 +59,17 @@
 							<div class="user-account__name">Eric K.</div>
 							<div class="user-account__settings">settings</div>
 						</div>
+
+						<!-- .popup-settings -->
+						<div class="popup-settings">
+							<ul class="popup-settings__list">
+								<li class="popup-settings__item js-modal-btn" data-modal-open="modalProfile">Profile Settings</li>
+								<li class="popup-settings__item">Transations History</li>
+								<li class="popup-settings__item">Referrals</li>
+								<li class="popup-settings__item"><a href="">Exit</a></li>
+							</ul>
+						</div>
+						<!-- / .popup-settings -->
 					</div>
 				</div>
 			</div>
@@ -532,6 +543,83 @@
 		<!-- / .footer -->
 	</div>
 	<!-- / .page__wrapper -->
+
+
+
+	<!----------- Modals ------------->
+
+	<!-- Modal Profile Settings -->
+	<div class="modal modal-form" data-modal="modalProfile">
+		<div class="modal__overlay">
+			<div class="modal__body">
+				<div class="modal__close"></div>
+				<!-- profile-form -->
+				<div class="form profile-form">
+					<div class="form__header text-center">
+						<div class="profile-form__ava">
+							<!-- ava -->
+							<div class="ava ava_text ava--light" id="avaDefault">
+								<span class="ava__name">EK</span>
+							</div>
+							<!-- upload-photo -->
+							<button type="button" class="upload-ava is-hidden"></button>
+						</div>
+						<span class="upload-ava-info is-hidden">(Avatar photo 128x128)</span>
+
+						<h3 class="form__header-title"><span class="text-grad">Profile</span> Settings</h3>
+					</div>
+
+					<div class="form__body">
+						<div class="input-field">
+							<label class="input-field__label">Email address</label>
+							<input type="email" class="input-field__input input-profile" id="userEmail" value="alma.sawson@example.com" autocomplete="off"
+								disabled>
+						</div>
+						<div class="input-field">
+							<label class="input-field__label">Referred by</label>
+							<input type="email" name="email" class="input-field__input input-profile" id="userReferred" value="georgia@example.com"
+								autocomplete="off" disabled>
+						</div>
+						<div class="input-field">
+							<label class="input-field__label">First Name</label>
+							<input type="text" name="first-name" class="input-field__input input-profile" id="userFirstName" value="Alma"
+								autocomplete="off" disabled>
+						</div>
+						<div class="input-field">
+							<label class="input-field__label">Last Name</label>
+							<input type="text" name="last-name" class="input-field__input input-profile" id="userLastName" value="Sawson"
+								autocomplete="off" disabled>
+						</div>
+						<div class="input-field">
+							<label class="input-field__label">Password</label>
+							<div class="input-field__box">
+								<input type="password" name="password" class="input-field__input input-profile input-password" id="userPassword"
+									value="AlvZYX" autocomplete="off" disabled>
+								<i class="ic-password pass-yes"></i>
+							</div>
+						</div>
+						<div class="input-field password-repeat is-hidden">
+							<label class="input-field__label">Password Repeat</label>
+							<div class="input-field__box">
+								<input type="password" name="password-repeat" class="input-field__input input-profile input-password"
+									id="userPasswordRepeat" value="AlvZYX" autocomplete="off" disabled>
+								<i class="ic-password pass-yes"></i>
+							</div>
+						</div>
+						<button type="button" class="btn btn-stroke form__btn" id="edit-btn">Edit Profile</button>
+						<button type="button" class="btn form__btn is-hidden" id="update-btn">Update Profile</button>
+					</div>
+				</div>
+				<!-- / .profile-form -->
+			</div>
+		</div>
+	</div>
+	<!-- / Modal Profile Settings -->
+
+
+	<!----------- ./ Modals ------------->
+
+
 </body>
 
 </html>
