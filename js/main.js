@@ -102,7 +102,7 @@ $(window).on('resize', function (e) {
 }).trigger('resize');
 
 
-// Показ и скрытие ррозыгрышей в истории
+// Показ и скрытие розыгрышей в истории
 const btnDrawingsMore = document.querySelector('#drawingsMore');
 const drawingsHidden = document.querySelector('.drawings__hidden');
 
@@ -134,14 +134,13 @@ document.addEventListener('click', (event) => {
 });
 
 /* ------------------- Edit Profile -------------------- */
-
-
 const editBtn = document.querySelector('#edit-btn');
 const updateBtn = document.querySelector('#update-btn');
 const profileInputs = document.querySelectorAll('.input-profile');
 const uploadAva = document.querySelector('.upload-ava');
 const uploadAvaInfo = document.querySelector('.upload-ava-info');
 const passwordRepeat = document.querySelector('.password-repeat');
+const iconPassword = document.querySelector('.pass-yes');
 
 editBtn.addEventListener('click', () => {
 	profileInputs.forEach(input => input.removeAttribute('disabled'));
@@ -150,6 +149,7 @@ editBtn.addEventListener('click', () => {
 	uploadAva.classList.remove('is-hidden');
 	passwordRepeat.classList.remove('is-hidden');
 	uploadAvaInfo.classList.remove('is-hidden');
+	iconPassword.classList.remove('is-hidden');
 });
 
 updateBtn.addEventListener('click', () => {
@@ -160,6 +160,7 @@ updateBtn.addEventListener('click', () => {
 	uploadAva.classList.add('is-hidden');
 	passwordRepeat.classList.add('is-hidden');
 	uploadAvaInfo.classList.add('is-hidden');
+	iconPassword.classList.add('is-hidden');
 });
 
 /* ------------------- Замена аватарки в профиле -------------------- */
@@ -201,4 +202,105 @@ passwordIcon.forEach(function (icon, index) {
 			icon.classList.add('pass-yes');
 		}
 	});
+});
+
+/* ------------------- Referrals -------------------- */
+const referralInput = document.querySelector('.input-referral');
+const referralLink = document.querySelector('.referals-link');
+const referralCodeElement = document.querySelector('.referals-link__code');
+const referralTooltip = document.querySelector('.referals-link__tooltip');
+
+referralLink.addEventListener('click', () => {
+	const referalCode = referralInput.value;
+	navigator.clipboard.writeText(`https://sitename.com/r/${referalCode}`);
+	referralTooltip.classList.add('active');
+	setTimeout(() => {
+		referralTooltip.classList.remove('active');
+	}, 2000);
+});
+
+referralInput.addEventListener('input', () => {
+	const referalCode = referralInput.value;
+	referralCodeElement.textContent = referalCode;
+});
+
+/* ------------------- Modal Success  -------------------- */
+const btnJoin = document.querySelector('.btn-join');
+const modalSuccess = document.querySelector('.modal-success');
+const modalSuccessOk = document.querySelector('.modal-success__ok');
+
+btnJoin.addEventListener('click', () => {
+	modalSuccess.classList.add('is-active');
+});
+
+modalSuccessOk.addEventListener('click', () => {
+	modalSuccess.classList.remove('is-active');
+});
+
+/* ------------------- Couner -------------------- */
+const minusBtn = document.querySelector('.counter__minus');
+const plusBtn = document.querySelector('.counter__plus');
+const inputField = document.querySelector('.counter__input');
+const selectBtns = document.querySelectorAll('.selects-tickets__btn');
+
+let counterValue = 1;
+
+minusBtn.addEventListener('click', () => {
+  if (counterValue > 1) {
+    counterValue--;
+    inputField.value = counterValue;
+  }
+});
+
+plusBtn.addEventListener('click', () => {
+  counterValue++;
+  inputField.value = counterValue;
+});
+
+selectBtns.forEach(btn => {
+  btn.addEventListener('click', () => {
+    counterValue = parseInt(btn.textContent);
+    inputField.value = counterValue;
+    selectBtns.forEach(btn => {
+      btn.classList.remove('active');
+    });
+    btn.classList.add('active');
+  });
+});
+
+
+/* ------------------- Tabs -------------------- */
+const tabBuy = document.getElementById("tab-buy");
+const tabSell = document.getElementById("tab-sell");
+const paymentBuy = document.getElementById("payment-buy");
+const paymentSell = document.getElementById("payment-sell");
+const formBuy = document.getElementById("buy-form");
+const formSell = document.getElementById("sell-form");
+
+tabSell.addEventListener('click', () => {
+	tabSell.classList.add('active');
+	tabBuy.classList.remove('active');
+
+	formSell.classList.add('is-active');
+	formSell.classList.remove('is-hidden');
+	formBuy.classList.add('is-hidden');	
+	
+	paymentBuy.classList.add('is-hidden');
+	paymentBuy.classList.remove('is-active');
+	paymentSell.classList.add('is-active');
+	paymentSell.classList.remove('is-hidden');
+});
+
+tabBuy.addEventListener('click', () => {
+	tabSell.classList.remove('active');
+	tabBuy.classList.add('active');
+
+	formSell.classList.remove('is-active');
+	formSell.classList.add('is-hidden');
+	formBuy.classList.remove('is-hidden');
+
+	paymentSell.classList.remove('is-active');
+	paymentSell.classList.add('is-hidden');
+	paymentBuy.classList.add('is-active');
+	paymentBuy.classList.remove('is-hidden');
 });
