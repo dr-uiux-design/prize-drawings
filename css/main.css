@@ -1846,6 +1846,10 @@ strong {
   .profile-form__ava .ava__name {
     font-size: 32px;
   }
+  .profile-form .upload-ava {
+    right: -6px;
+    bottom: -6px;
+  }
 }
 .modal-referrals .modal__header-title {
   margin-bottom: 20px;
@@ -2227,14 +2231,15 @@ strong {
   font-size: 16px;
   line-height: 24px;
   padding: 12px 24px;
-  border: 1px solid rgba(0, 0, 0, 0.14);
+  border: 1px solid rgba(0, 0, 0, 0.15);
   border-radius: 100px;
   -webkit-transition: border 0.2s ease-in-out;
   -o-transition: border 0.2s ease-in-out;
   transition: border 0.2s ease-in-out;
+  z-index: 1;
 }
 .payment-tabs__item:hover {
-  border-color: var(--dark-800);
+  border: 1px solid var(--dark-800);
 }
 .payment-tabs__item.active {
   color: #fff;
