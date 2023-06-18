@@ -1,0 +1,22 @@
+.slick-dots {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  list-style: none;
+}
+
+.slick-dots button {
+  font-size: 0;
+  background: rgba(#000, 0.15);
+  outline: none;
+  border: none;
+  border-radius: 50%;
+  height: 8px;
+  width: 8px;
+  margin: 4px;
+  outline: none;
+}
+
+.slick-dots li[class="slick-active"] button {
+  background: var(--dark-800);
+}

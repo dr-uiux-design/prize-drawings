@@ -1,0 +1,146 @@
+.modal-transactions {
+  .modal__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    padding-top: 16px;
+
+    &-title {
+      margin-bottom: 0;
+    }
+  }
+
+  .transactions-search {
+    position: relative;
+    input {
+      width: 280px;
+    }
+
+    .ic-search {
+      position: absolute;
+      position: absolute;
+      right: 16px;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+  }
+
+  .modal__content {
+    max-width: 960px;
+  }
+}
+
+// table-transactions
+.table-transactions {
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #fff;
+
+    .payment-logo {
+      text-align: center;
+    }
+
+    .amount {
+      font-weight: 500;
+    }
+    .amount-by {
+      color: #039855;
+    }
+    .amount-sale {
+      color: #ca3333;
+    }
+
+    th,
+    td {
+      padding: 8px;
+      text-align: left;
+      border: 1px solid rgba(0, 0, 0, 0.12);
+      padding: 10px 16px;
+      line-height: 1;
+    }
+
+    th {
+      background-color: var(--dark-800);
+      color: white;
+      font-size: 16px;
+      font-weight: 600;
+    }
+
+    td {
+      font-size: 16px;
+    }
+
+    tr:nth-child(even) {
+      background-color: #f8f8f8;
+    }
+
+    thead tr th {
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      padding: 16px;
+    }
+  }
+}
+
+@media (max-width: 800px) {
+  .modal-transactions .modal__header {
+    display: block;
+    text-align: left;
+    margin-bottom: 24px;
+  }
+
+  .modal-transactions .modal__header-title {
+    margin-bottom: 24px;
+  }
+
+  .modal-transactions .transactions-search input {
+    width: 100%;
+  }
+  .table-transactions table th,
+  .table-transactions table td {
+    font-size: 14px;
+    padding: 10px;
+  }
+}
+
+@media (max-width: 600px) {
+  .table-transactions {
+    overflow: auto;
+  }
+  .table-transactions table {
+    width: 600px;
+    overflow-x: scroll;
+  }
+
+  .modal-transactions .modal__content {
+    padding: 32px;
+  }
+}
+
+@media (max-width: 480px) {
+  .modal-transactions .modal__header {
+    padding-top: 0;
+  }
+
+  .modal-transactions .modal__header-title {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+  .modal-transactions .modal__content {
+    padding: 24px;
+  }
+}
+
+@media (max-width: 375px) {
+  .modal-transactions .modal__header-title {
+    margin-bottom: 16px;
+  }
+
+  .table-transactions table th,
+  .table-transactions table td {
+    font-size: 13px;
+    padding: 5px 10px;
+  }
+}

@@ -1,0 +1,147 @@
+/* ------------------- Modal -------------------- */
+
+// Цвет затемнения
+$modal-overlay: rgba(0, 0, 0, 0.5);
+$modal-width: 700px;
+
+// Стили для .modal__content
+$modal-content-width: 600px;
+$modal-form-width: 480px;
+$modal-bg: #fff;
+$modal-radius: 16px;
+$modal-pading: 32px 48px;
+$modal-anim: translateY(-200px);
+
+// Стили модального окна
+.modal {
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  visibility: hidden;
+  opacity: 0;
+  transition: all 0.2s;
+  pointer-events: none;
+
+  &__overlay {
+    width: 100%;
+    height: 100%;
+    background-color: $modal-overlay;
+    display: flex;
+    padding: 20px;
+  }
+
+  &__content {
+    width: 100%;
+    max-height: 90%;
+    max-width: $modal-content-width;
+    margin: auto;
+    overflow: auto;
+    background: $modal-bg;
+    box-shadow: 0px 16px 40px rgba(0, 0, 0, 0.24);
+    border-radius: $modal-radius;
+    transform: $modal-anim;
+    padding: $modal-pading;
+    transition: transform 0.3s ease-in-out;
+    position: relative;
+    /* Стилизация скролла */
+    &::-webkit-scrollbar {
+      width: 4px;
+      background: var(--gray-200);
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background-color: var(--dark-800);
+      border-radius: 100px;
+    }
+
+    &::-webkit-scrollbar-thumb:hover {
+      background-color: var(--dark-800);
+    }
+  }
+
+  &__header {
+    margin-bottom: 32px;
+
+    &-title {
+      color: var(--title-color);
+      font-size: clamp(1.5rem, 0.5rem + 5vw, 2.25rem);
+      font-weight: 600;
+      line-height: 1.2;
+      margin-bottom: clamp(0rem, -1rem + 5vw, 0.5rem);
+    }
+
+    &-descr {
+      color: #666666;
+    }
+  }
+
+  &__close {
+    cursor: pointer;
+    display: inline-block;
+    width: 32px;
+    height: 32px;
+    background: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzIiIGhlaWdodD0iMzIiIHZpZXdCb3g9IjAgMCAzMiAzMiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICA8ZyBpZD0iMTA2NjI1YmIiPgogICAgPGcgaWQ9IjQ1MDZjMGUwIj4KICAgICAgPHJlY3QgaWQ9IjQ2M2VlOTlhIiB4PSIzLjYwNjM3IiB5PSIyNi42MDYzIiB3aWR0aD0iMzIiIGhlaWdodD0iMiIgcng9IjEiIHRyYW5zZm9ybT0icm90YXRlKC00NSAzLjYwNjM3IDI2LjYwNjMpIiBmaWxsPSIjQjNCM0IzIj48L3JlY3Q+CiAgICAgIDxyZWN0IGlkPSIzM2I5YjkwYSIgeD0iNS4wMjA1OCIgeT0iMy45NzkzNyIgd2lkdGg9IjMyIiBoZWlnaHQ9IjIiIHJ4PSIxIiB0cmFuc2Zvcm09InJvdGF0ZSg0NSA1LjAyMDU4IDMuOTc5MzcpIiBmaWxsPSIjQjNCM0IzIj48L3JlY3Q+CiAgICA8L2c+CiAgPC9nPgo8L3N2Zz4=");
+    background-size: cover;
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    transition: all 0.3s ease-in-out;
+    &:hover {
+      background: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzIiIGhlaWdodD0iMzIiIHZpZXdCb3g9IjAgMCAzMiAzMiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICA8ZyBpZD0iMTA2NjI1YmIiPgogICAgPGcgaWQ9IjQ1MDZjMGUwIj4KICAgICAgPHJlY3QgaWQ9IjQ2M2VlOTlhIiB4PSIzLjYwNjM3IiB5PSIyNi42MDYzIiB3aWR0aD0iMzIiIGhlaWdodD0iMiIgcng9IjEiIHRyYW5zZm9ybT0icm90YXRlKC00NSAzLjYwNjM3IDI2LjYwNjMpIiBmaWxsPSIjMUExQTFBIj48L3JlY3Q+CiAgICAgIDxyZWN0IGlkPSIzM2I5YjkwYSIgeD0iNS4wMjA1OCIgeT0iMy45NzkzNyIgd2lkdGg9IjMyIiBoZWlnaHQ9IjIiIHJ4PSIxIiB0cmFuc2Zvcm09InJvdGF0ZSg0NSA1LjAyMDU4IDMuOTc5MzcpIiBmaWxsPSIjMUExQTFBIj48L3JlY3Q+CiAgICA8L2c+CiAgPC9nPgo8L3N2Zz4=");
+      transform: rotate(180deg);
+    }
+  }
+
+  // Открытое модальное окно
+  &.is-active {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: all;
+
+    .modal__content {
+      transform: none;
+    }
+  }
+
+  &.modal-form {
+    .modal__content {
+      max-width: $modal-form-width;
+    }
+
+    .form {
+      background: none;
+      padding: 0;
+      border-radius: 0;
+      box-shadow: none;
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .modal__overlay {
+    padding: 16px;
+  }
+
+  .modal__content {
+    padding: 24px 32px;
+    padding-bottom: 48px;
+    border-radius: 8px;
+  }
+
+  .modal__close {
+    width: 24px;
+    height: 24px;
+    top: 10px;
+    right: 10px;
+  }
+}
+
+@media (max-width: 375px) {
+  .modal__content {
+    padding: 24px 15px;
+  }
+}
+/* ------------------- / Modal -------------------- */

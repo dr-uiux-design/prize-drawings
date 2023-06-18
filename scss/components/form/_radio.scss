@@ -1,0 +1,103 @@
+/* ------------------- Custom RadioButton -------------------- */
+$radio-size: 20px;
+$radio-label-fz: 16px;
+
+.radio {
+  cursor: pointer;
+  display: inline-block;
+  transition: all 0.1s ease-in-out;
+  position: relative;
+
+  &__input {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    display: none;
+  }
+
+  &__box {
+    flex-shrink: 0;
+    cursor: pointer;
+    display: block;
+    width: $radio-size;
+    height: $radio-size;
+    background-color: #fff;
+    border: 1.4px solid #d0d5dd;
+    border-radius: 50%;
+    position: absolute;
+    margin-right: 10px;
+    transition: border 0.2s ease-in-out;
+    position: relative;
+
+    &::before {
+      content: "";
+      width: 8px;
+      height: 8px;
+      background-color: var(--main-color);
+      border-radius: 50%;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      display: none;
+    }
+
+    &:hover {
+      border: 1px solid var(--main-color);
+    }
+  }
+
+  &__label {
+    color: var(--text-color);
+    font-size: $radio-label-fz;
+    line-height: 1;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: calc($checkbox-size + 10px);
+
+    &:hover .radio__box {
+      border: 1px solid var(--main-color);
+    }
+  }
+
+  &.disabled {
+    opacity: 0.7;
+  }
+}
+
+// Checked
+.radio__input:checked + .radio__box {
+  background: #fff;
+  background-size: 16px 16px;
+  border: 2px solid var(--main-color);
+
+  &::before {
+    display: block;
+  }
+}
+
+// Focused
+.radio__input:focus + .radio__box {
+  outline: 1.5px solid rgba(#4362a0, 0.6);
+}
+
+.radio__input:checked:focus + .radio__box {
+  outline: 1.5px solid rgba(#4362a0, 0.6);
+}
+
+// Disabled
+.radio__input:disabled + .radio__box {
+  cursor: default;
+  background: #f2f4f7;
+  border: 1.4px solid #d0d5dd;
+}
+
+.radio__input:checked:disabled + .radio__box {
+  background: #f0f0f0;
+  background-size: 16px 16px;
+  border: 1.4px solid #d0d5dd;
+  &::before {
+    background-color: #d0d5dd;
+  }
+}

@@ -103,18 +103,18 @@ $(window).on('resize', function (e) {
 
 
 // Показ и скрытие розыгрышей в истории
-const btnDrawingsMore = document.querySelector('#drawingsMore');
-const drawingsHidden = document.querySelector('.drawings__hidden');
+// const btnDrawingsMore = document.querySelector('#drawingsMore');
+// const drawingsHidden = document.querySelector('.drawings__hidden');
 
-btnDrawingsMore.addEventListener("click", function () {
-	if (drawingsHidden.style.display === "none") {
-		drawingsHidden.style.display = "block";
-		btnDrawingsMore.innerText = "Сollapse";
-	} else {
-		drawingsHidden.style.display = "none";
-		btnDrawingsMore.innerText = "View all";
-	}
-});
+// btnDrawingsMore.addEventListener("click", function () {
+// 	if (drawingsHidden.style.display === "none") {
+// 		drawingsHidden.style.display = "block";
+// 		btnDrawingsMore.innerText = "Сollapse";
+// 	} else {
+// 		drawingsHidden.style.display = "none";
+// 		btnDrawingsMore.innerText = "View all";
+// 	}
+// });
 
 // Попап Аккаунта в шапке
 const userAccount = document.querySelector('.user-account');
@@ -138,8 +138,6 @@ const editBtn = document.querySelector('#edit-btn');
 const updateBtn = document.querySelector('#update-btn');
 const profileInputs = document.querySelectorAll('.input-profile');
 const uploadAva = document.querySelector('.upload-ava');
-const uploadAvaInfo = document.querySelector('.upload-ava-info');
-const passwordRepeat = document.querySelector('.password-repeat');
 const iconPassword = document.querySelector('.pass-yes');
 
 editBtn.addEventListener('click', () => {
@@ -147,8 +145,6 @@ editBtn.addEventListener('click', () => {
 	editBtn.classList.add('is-hidden');
 	updateBtn.classList.remove('is-hidden');
 	uploadAva.classList.remove('is-hidden');
-	passwordRepeat.classList.remove('is-hidden');
-	uploadAvaInfo.classList.remove('is-hidden');
 	iconPassword.classList.remove('is-hidden');
 });
 
@@ -158,8 +154,6 @@ updateBtn.addEventListener('click', () => {
 	updateBtn.classList.add('is-hidden');
 	editBtn.classList.remove('is-hidden');
 	uploadAva.classList.add('is-hidden');
-	passwordRepeat.classList.add('is-hidden');
-	uploadAvaInfo.classList.add('is-hidden');
 	iconPassword.classList.add('is-hidden');
 });
 
@@ -226,14 +220,21 @@ referralInput.addEventListener('input', () => {
 
 /* ------------------- Modal Success  -------------------- */
 const btnJoin = document.querySelector('.btn-join');
+const modalConfirmation = document.querySelector('.modal-confirmation');
 const modalSuccess = document.querySelector('.modal-success');
-const modalSuccessOk = document.querySelector('.modal-success__ok');
+const confirmationOk = document.querySelector('.confirmation-ok');
+const successOk = document.querySelector('.success-ok');
 
 btnJoin.addEventListener('click', () => {
-	modalSuccess.classList.add('is-active');
+	modalConfirmation.classList.add('is-active');
 });
 
-modalSuccessOk.addEventListener('click', () => {
+confirmationOk.addEventListener('click', () => {
+	modalSuccess.classList.add('is-active');
+	modalConfirmation.classList.remove('is-active');
+});
+
+successOk.addEventListener('click', () => {
 	modalSuccess.classList.remove('is-active');
 });
 

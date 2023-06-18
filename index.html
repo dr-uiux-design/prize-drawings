@@ -355,7 +355,7 @@
 
 					<!-- drawings__history -->
 					<div class="drawings__history">
-						<button type="button" class="drawings__history-more" id="drawingsMore">View all</button>
+						<a href="./history.html" target="_blank" class="drawings__history-more">View all</a>
 						<div class="drawings__head">
 							<h3 class="drawings__title">History</h3>
 							<p class="drawings__descr">Completed drawings width your participation</p>
@@ -559,75 +559,7 @@
 
 
 	<!----------- Modals ------------->
-
-	<!-- Modal Profile Settings -->
-	<div class="modal modal-form" data-modal="modalProfile">
-		<div class="modal__overlay">
-			<div class="modal__content">
-				<div class="modal__close"></div>
-				<!-- profile-form -->
-				<div class="form profile-form">
-					<div class="form__header text-center">
-						<div class="profile-form__ava">
-							<!-- ava -->
-							<div class="ava ava-text ava--light" id="avaDefault">
-								<span class="ava__name">EK</span>
-							</div>
-							<!-- upload-photo -->
-							<button type="button" class="upload-ava is-hidden"></button>
-						</div>
-						<span class="upload-ava-info is-hidden">(Avatar photo 128x128)</span>
-
-						<h3 class="form__header-title"><span class="text-grad">Profile</span> Settings</h3>
-					</div>
-					<div class="form__body">
-						<div class="form-field">
-							<label class="form-field__label">Email address</label>
-							<input type="email" class="form-field__input input-profile" id="userEmail" value="alma.sawson@example.com" autocomplete="off"
-								disabled>
-						</div>
-						<div class="form-field">
-							<label class="form-field__label">Referred by</label>
-							<input type="email" name="email" class="form-field__input input-profile" id="userReferred" value="georgia@example.com"
-								autocomplete="off" disabled>
-						</div>
-						<div class="form-field">
-							<label class="form-field__label">First Name</label>
-							<input type="text" name="first-name" class="form-field__input input-profile" id="userFirstName" value="Alma"
-								autocomplete="off" disabled>
-						</div>
-						<div class="form-field">
-							<label class="form-field__label">Last Name</label>
-							<input type="text" name="last-name" class="form-field__input input-profile" id="userLastName" value="Sawson"
-								autocomplete="off" disabled>
-						</div>
-						<div class="form-field">
-							<label class="form-field__label">Password</label>
-							<div class="form-field__box">
-								<input type="password" name="password" class="form-field__input input-profile input-password" id="userPassword"
-									value="AlvZYX" autocomplete="off" disabled>
-								<i class="ic-password pass-yes is-hidden"></i>
-							</div>
-						</div>
-						<div class="form-field password-repeat is-hidden">
-							<label class="form-field__label">Password Repeat</label>
-							<div class="form-field__box">
-								<input type="password" name="password-repeat" class="form-field__input input-profile input-password" id="userPasswordRepeat"
-									value="AlvZYX" autocomplete="off" disabled>
-								<i class="ic-password pass-yes"></i>
-							</div>
-						</div>
-						<button type="button" class="btn btn-stroke form__btn" id="edit-btn">Edit Profile</button>
-						<button type="button" class="btn form__btn is-hidden" id="update-btn">Update Profile</button>
-					</div>
-				</div>
-				<!-- / .profile-form -->
-			</div>
-		</div>
-	</div>
-	<!-- / Modal Profile Settings -->
-
-	<!-- Modal Referrals -->
+	<!-- Modal Room -->
 	<div class="modal modal-form modal-referrals" data-modal="modalReferrals">
 		<div class="modal__overlay">
 			<div class="modal__content">
@@ -661,7 +593,97 @@
 			</div>
 		</div>
 	</div>
-	<!-- / Modal Referrals -->
+	<!-- / Modal Room -->
+
+	<!-- Modal Confirmation -->
+	<div class="modal modal-info modal-confirmation" data-modal="modalConfirmation">
+		<div class="modal__overlay">
+			<div class="modal__content text-center">
+				<div class="modal__close"></div>
+				<div class="modal__header">
+					<h3 class="modal__header-title">Confirmation</h3>
+					<p class="modal-room__header-descr">After pressing the "OK" button, you will occupy the free slot No. 7 in the room.</p>
+					<p>In order for the room to form, you need to fill in all the slots, so buy more tickets or invite a friend using your
+						<strong>referral
+							link</strong>.
+					</p>
+					<button type="button" class="btn modal-info__btn confirmation-ok">OK</button>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- / Modal Confirmation -->
+
+	<!-- Modal Success -->
+	<div class="modal modal-info modal-success" data-modal="modalSuccess">
+		<div class="modal__overlay">
+			<div class="modal__content text-center">
+				<div class="modal__close"></div>
+				<div class="modal__header">
+					<h3 class="modal__header-title">Success</h3>
+					<p class="modal-room__header-descr">You have successfully occupied a free slot. Take as many free slots as possible for the
+						highest chance of winning.</p>
+					<button type="button" class="btn modal-info__btn success-ok">OK</button>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- / Modal Success -->
+
+
+	<!-- Modal Profile Settings -->
+	<div class="modal modal-profile" data-modal="modalProfile">
+		<div class="modal__overlay">
+			<div class="modal__content">
+				<div class="modal__close"></div>
+				<!-- profile-form -->
+				<div class="form profile-form">
+					<div class="form__header text-center">
+						<div class="profile-form__ava">
+							<!-- ava -->
+							<div class="ava ava-text ava--light" id="avaDefault">
+								<span class="ava__name">EK</span>
+							</div>
+							<!-- upload-photo -->
+							<button type="button" class="upload-ava is-hidden"></button>
+						</div>
+						<h3 class="form__header-title"><span class="text-grad">Profile</span> Settings</h3>
+					</div>
+					<div class="form__body">
+						<div class="form-field">
+							<label class="form-field__label">Email address</label>
+							<input type="email" class="form-field__input input-profile" id="userEmail" value="alma.sawson@example.com" autocomplete="off"
+								disabled>
+						</div>
+						<div class="form-field">
+							<label class="form-field__label">First Name</label>
+							<input type="text" name="first-name" class="form-field__input input-profile" id="userFirstName" value="Alma"
+								autocomplete="off" disabled>
+						</div>
+						<div class="form-field">
+							<label class="form-field__label">Last Name</label>
+							<input type="text" name="last-name" class="form-field__input input-profile" id="userLastName" value="Sawson"
+								autocomplete="off" disabled>
+						</div>
+						<div class="form-field password-field">
+							<label class="form-field__label">Password</label>
+							<div class="form-field__box">
+								<input type="password" name="password" class="form-field__input input-profile input-password" id="userPassword"
+									value="AlvZYX" autocomplete="off" disabled>
+								<i class="ic-password pass-yes is-hidden"></i>
+							</div>
+						</div>
+						<button type="button" class="btn btn-stroke form__btn" id="edit-btn">Edit Profile</button>
+						<button type="button" class="btn form__btn is-hidden" id="update-btn">Update Profile</button>
+					</div>
+
+					<div class="referred-by">Referred by: <span id="referred">georgia@example.com</span></div>
+				</div>
+				<!-- / .profile-form -->
+			</div>
+		</div>
+	</div>
+	<!-- / Modal Profile Settings -->
 
 	<!-- Modal Transactions History -->
 	<div class="modal modal-transactions" data-modal="modalTransactions">
@@ -717,11 +739,30 @@
 								<td class="purchasing">By 1T for $25</td>
 							</tr>
 						</tbody>
-
 					</table>
-
 				</div>
+				<div class="pagination pagination-transactions">
+					<ul class="pagination__list">
+						<li class="pagination__item pagination__prev">
+							<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+								<path
+									d="M13.0784 15.5785C13.4184 15.2389 13.4184 14.6882 13.0784 14.3486L8.725 9.99996L13.0784 5.65134C13.4184 5.31169 13.4184 4.76101 13.0784 4.42136C12.7383 4.08172 12.1871 4.08171 11.8471 4.42136L6.92176 9.34129C6.74059 9.52221 6.65595 9.76313 6.66785 10.0001C6.65602 10.237 6.74067 10.4777 6.92177 10.6586L11.8471 15.5785C12.1871 15.9182 12.7383 15.9182 13.0784 15.5785Z"
+									fill="currentColor" />
+							</svg>
+						</li>
+						<li class="pagination__item active">1</li>
+						<li class="pagination__item">2</li>
+						<li class="pagination__item">3</li>
+						<li class="pagination__item pagination__next">
+							<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+								<path
+									d="M6.92139 15.5785C7.26157 15.918 7.81311 15.918 8.15328 15.5785L13.0808 10.6609C13.2689 10.4731 13.353 10.221 13.3331 9.97562C13.3382 9.74662 13.2532 9.51604 13.0783 9.34129L8.15301 4.42136C7.81298 4.08172 7.2617 4.08172 6.92167 4.42136C6.58166 4.76101 6.58166 5.31169 6.92167 5.65134L11.2772 10.002L6.92139 14.3491C6.58122 14.6886 6.58122 15.239 6.92139 15.5785Z"
+									fill="currentColor" />
+							</svg>
 
+						</li>
+					</ul>
+				</div>
 			</div>
 		</div>
 	</div>
@@ -882,22 +923,6 @@
 		</div>
 	</div>
 	<!-- / Modal Referrals -->
-
-	<!-- Modal Success -->
-	<div class="modal modal-success" data-modal="modalSuccess">
-		<div class="modal__overlay">
-			<div class="modal__content text-center">
-				<div class="modal__close"></div>
-				<div class="modal__header">
-					<h3 class="modal__header-title">Success</h3>
-					<p class="modal-room__header-descr">You have successfully occupied a free slot. Take as many free slots as possible for the
-						highest chance of winning.</p>
-					<button type="button" class="btn modal-success__ok">OK</button>
-				</div>
-			</div>
-		</div>
-	</div>
-	<!-- / Modal Success -->
 
 	<!-- Modal Payment -->
 	<div class="modal modal-payment" data-modal="modalPayment">

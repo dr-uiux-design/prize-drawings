@@ -1,0 +1,68 @@
+.colors {
+  &__box {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 32px;
+  }
+
+  &__item {
+    width: 100px;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    border-radius: 50px 0px 50px 50px;
+    font-size: 14px;
+    line-height: 1;
+  }
+}
+
+// Dark
+.dark-800 {
+  background: var(--dark-800);
+}
+.dark-700 {
+  background: var(--dark-700);
+}
+.dark-600 {
+  background: var(--dark-600);
+}
+.dark-500 {
+  background: var(--dark-500);
+}
+
+// Gray
+.gray-500 {
+  background: var(--gray-500);
+}
+.gray-400 {
+  background: var(--gray-400);
+}
+.gray-300 {
+  background: var(--gray-300);
+}
+.gray-200 {
+  background: var(--gray-200);
+}
+.gray-100 {
+  background: var(--gray-100);
+}
+
+// Accent
+.blue-color {
+  color: var(--dark-700);
+  background: var(--blue-color);
+}
+.purple-color {
+  color: var(--dark-700);
+  background: var(--purple-color);
+}
+.green-color {
+  color: var(--dark-700);
+  background: var(--green-color);
+}
+.yellow-color {
+  color: var(--dark-700);
+  background: var(--yellow-color);
+}

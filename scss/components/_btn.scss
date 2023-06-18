@@ -1,0 +1,92 @@
+$btn-hight: 3.5rem;
+$btn-padding: 0 2rem;
+$btn-color: #fff;
+$btn-bg: var(--main-color);
+$btn-boder: 1px solid transparent;
+$btn-br: 8px;
+$btn-ff: var(--font-default);
+$btn-fz: 16px;
+$btn-fw: 600;
+$btn-lh: 1.2;
+$btn-bxs: none;
+
+.btn {
+  height: $btn-hight;
+  padding: $btn-padding;
+  color: $btn-color;
+  background: $btn-bg;
+  border: $btn-boder;
+  border-radius: $btn-br;
+  font-family: $btn-ff;
+  font-size: $btn-fz;
+  font-weight: $btn-fw;
+  line-height: $btn-lh;
+  text-decoration: none;
+  box-shadow: $btn-bxs;
+  transition: all 0.35s ease-in-out;
+  overflow: hidden;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+
+  &:hover {
+    opacity: 0.8;
+  }
+
+  &.disabled {
+    opacity: 0.5;
+    cursor: default;
+  }
+}
+
+.btn-stroke {
+  color: $btn-bg;
+  background: transparent;
+  border-color: $btn-bg;
+  position: relative;
+  z-index: 1;
+
+  &::before {
+    display: inline-block;
+    content: "";
+    width: 0;
+    height: 100%;
+    background: $btn-bg;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    transition: width 0.4s ease-in-out;
+  }
+
+  &:hover::before {
+    width: 100%;
+  }
+
+  &:hover {
+    border: 1px solid transparent;
+    opacity: 1;
+    color: #fff;
+  }
+}
+
+.btns-group {
+  display: flex;
+  flex-wrap: wrap;
+
+  .btn {
+    &:not(:last-child) {
+      margin-right: 16px;
+      margin-bottom: 16px;
+    }
+  }
+
+  @media (max-width: 600px) {
+    display: block;
+    .btn {
+      width: 100%;
+    }
+  }
+}

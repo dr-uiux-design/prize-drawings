@@ -1,0 +1,179 @@
+@import "./01-normalize";
+@import "./02-vars";
+
+/* ------------------- Default -------------------- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  &::before,
+  &::after {
+    box-sizing: border-box;
+  }
+}
+
+body {
+  min-width: 320px;
+  background: #f2f2f2;
+  color: var(--dark-700);
+  font-family: var(--font-default);
+  font-size: 16px;
+  line-height: 1.5;
+  color: #333;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.page__body {
+  &--white {
+    background: #fff;
+  }
+}
+
+// Прижание footer к низу
+.page__wrapper {
+  width: 100%;
+  // max-width: var(--wrapper-width);
+  min-height: 100vh;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.page__main {
+  flex: 1;
+}
+
+.footer {
+  margin-top: auto;
+}
+
+.container {
+  width: 100%;
+  max-width: var(--container-width);
+  margin: 0 auto;
+  padding: 0 24px;
+
+  @media (max-width: 599px) {
+    padding: 0 16px;
+  }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: var(--dark-800);
+}
+
+.title-big,
+.title-1,
+.title-2,
+.title-3,
+.title-4,
+.title-5,
+.title-6 {
+  color: var(--dark-800);
+  margin: 0;
+  padding: 0;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+a {
+  cursor: pointer;
+  font-size: inherit;
+  color: inherit;
+  transition: all 0.2s ease-in-out;
+
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+input,
+button,
+textarea,
+select {
+  font-family: var(--font-default);
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  outline: none;
+  background: none;
+  background-color: none;
+  font-size: inherit;
+}
+
+input {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border-radius: 0;
+  font-size: inherit;
+  color: var(--dark--700);
+
+  &::placeholder {
+    color: #666;
+  }
+}
+
+strong {
+  font-weight: bold;
+  font-weight: 700;
+}
+
+.list-reset {
+  list-style: none;
+}
+
+.text-center {
+  text-align: center;
+}
+
+// плавное появление контента через анимацию
+// animation: fade 0.3s ease-in-out (задать элементу который нужно показывать плавно;
+@keyframes fade {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.text-grad {
+  display: inline-block;
+  background: linear-gradient(
+    115deg,
+    #f5c05a 16.34%,
+    #eb88b1 43.03%,
+    #6cafff 59.19%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+}
+
+.is-hidden {
+  display: none !important;
+}
+
+@keyframes fade {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}

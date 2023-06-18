@@ -1,0 +1,48 @@
+.ic-ticket {
+  width: 20px;
+  height: 20px;
+  display: inline-block;
+  background-repeat: no-repeat;
+  background-position: 0 0;
+  background-size: cover;
+
+  &--dark {
+    background-image: url("../img/icons/ic-ticket_dark.svg");
+  }
+
+  &--light {
+    background-image: url("../img/icons/ic-ticket_light.svg");
+  }
+}
+
+.ic-password {
+  display: inline-block;
+  width: 18px;
+  height: 18px;
+
+  &.pass-yes {
+    background: url("../img/icons/ic-pass_show.svg") no-repeat center;
+    background-size: cover;
+  }
+
+  &.pass-no {
+    background: url("../img/icons/ic-pass_hide.svg") no-repeat center;
+    background-size: cover;
+  }
+}
+
+.ic-copy {
+  display: inline-block;
+  background: url("../img/icons/ic-copy.svg") no-repeat center;
+  background-size: cover;
+  width: 20px;
+  height: 20px;
+}
+
+.ic-search {
+  display: inline-block;
+  background: url("../img/icons/ic-search.svg") no-repeat center;
+  background-size: cover;
+  width: 20px;
+  height: 20px;
+}
