@@ -1,0 +1,16 @@
+.drawing-date {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 8px;
+  color: var(--gray-500);
+  font-size: 18px;
+  font-weight: 400;
+
+  &--small {
+    color: var(--gray-500);
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.2;
+    gap: 4px;
+  }
+}

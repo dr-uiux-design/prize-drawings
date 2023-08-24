@@ -21,12 +21,10 @@
 
 	<!-- JS -->
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
-
 	<script defer src="js/main.js"></script>
 </head>
 
-<body class="page__body history-page">
+<body class="page__body history-page bg-page">
 	<div class="page__wrapper">
 
 		<!-- HEADER -->
@@ -54,10 +52,6 @@
 					<div class="header__user user-account">
 						<div class="user-account__ava ava ava-text ava--light">
 							<span class="ava__name">EK</span>
-						</div>
-						<div class="user-account__box">
-							<div class="user-account__name">Eric K.</div>
-							<div class="user-account__settings">settings</div>
 						</div>
 
 						<!-- .popup-settings -->
@@ -87,190 +81,134 @@
 		<main class="page__main">
 
 			<!-- DRAWINGS -->
-			<section class="drawings">
-				<div class="container drawings__container">
-
-					<!-- drawings__history -->
+			<section class="history-page__drawings">
+				<div class="container history-page__drawings-container">
+					<a href="./index.html" class="back-page-link">
+						<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+							<path d="M14.121 17.293L12.707 18.707L6 12L12.707 5.29297L14.121 6.70697L9.828 11H19.414V13H9.828L14.121 17.293Z"
+								fill="currentColor" />
+						</svg>
+					</a>
+					<!--! drawings__history -->
 					<div class="drawings__history">
 						<div class="drawings__head">
-							<h3 class="drawings__title">History</h3>
-							<p class="drawings__descr">Completed drawings width your participation</p>
+							<h3 class="drawings__title">All History Drawings</h3>
+							<p style="margin-top: none!important;" class="drawings__descr">Completed drawings width your participation</p>
 						</div>
+						<!-- drawings__list -->
 						<div class="drawings__list">
-							<!-- drawings__item -->
-							<div class="drawings__item">
-								<div class="drawings__item-img">
+							<!--! drawing-item -->
+							<div class="drawing-item drawing-item--hover">
+								<div class="drawing-item__img">
 									<picture>
 										<source srcset="./img/airpods.webp" type="image/webp">
 										<img loading="lazy" src="./img/airpods.jpg" width="48" height="48" alt="AirPods">
 									</picture>
 								</div>
-								<div class="drawings__item-info">
-									<h4 class="drawings__item-name">AirPods</h4>
-									<p class="drawings__item-descr">Winner:
-										<span class="winner-user">clintmercs44</span>
-									</p>
+								<div class="drawing-item__info">
+									<h4 class="drawing-item__name">AirPods</h4>
+									<div class="drawing-winner drawing-winner--small">
+										<span class="drawing-winner__title">Winner:</span>
+										<span class="drawing-winner__user">User3456</span>
+									</div>
 								</div>
-								<div class="drawings__item-arrow">
+								<div class="drawing-item__arrow">
 									<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
 										<path d="M11.293 17.293L12.707 18.707L19.414 12L12.707 5.29297L11.293 6.70697L15.586 11H6V13H15.586L11.293 17.293Z"
 											fill="currentColor" />
 									</svg>
 								</div>
 							</div>
-							<!-- drawings__item -->
-							<div class="drawings__item">
-								<div class="drawings__item-img">
+							<!--! drawing-item -->
+							<div class="drawing-item drawing-item--hover">
+								<div class="drawing-item__img">
 									<picture>
-										<source srcset="./img/applewatch.webp" type="image/webp">
-										<img loading="lazy" src="./img/applewatch.jpg" width="48" height="48" alt="AppleWatch">
+										<source srcset="./img/airpods.webp" type="image/webp">
+										<img loading="lazy" src="./img/airpods.jpg" width="48" height="48" alt="AirPods">
 									</picture>
 								</div>
-								<div class="drawings__item-info">
-									<h4 class="drawings__item-name">AppleWatch</h4>
-									<p class="drawings__item-descr">Winner:
-										<span class="winner-user">clintmercs32</span>
-									</p>
+								<div class="drawing-item__info">
+									<h4 class="drawing-item__name">AirPods</h4>
+									<div class="drawing-winner drawing-winner--small">
+										<span class="drawing-winner__title">Winner:</span>
+										<span class="drawing-winner__user">User3456</span>
+									</div>
 								</div>
-								<div class="drawings__item-arrow">
+								<div class="drawing-item__arrow">
 									<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
 										<path d="M11.293 17.293L12.707 18.707L19.414 12L12.707 5.29297L11.293 6.70697L15.586 11H6V13H15.586L11.293 17.293Z"
 											fill="currentColor" />
 									</svg>
 								</div>
 							</div>
-							<!-- drawings__item -->
-							<div class="drawings__item">
-								<div class="drawings__item-img">
+							<!--! drawing-item -->
+							<div class="drawing-item drawing-item--hover">
+								<div class="drawing-item__img">
 									<picture>
-										<source srcset="./img/ipad.webp" type="image/webp">
-										<img loading="lazy" src="./img/ipad.jpg" width="48" height="48" alt="Apple iPad">
+										<source srcset="./img/airpods.webp" type="image/webp">
+										<img loading="lazy" src="./img/airpods.jpg" width="48" height="48" alt="AirPods">
 									</picture>
 								</div>
-								<div class="drawings__item-info">
-									<h4 class="drawings__item-name">Apple iPad</h4>
-									<p class="drawings__item-descr">Winner:
-										<span class="winner-user">clintmercs26</span>
-									</p>
+								<div class="drawing-item__info">
+									<h4 class="drawing-item__name">AirPods</h4>
+									<div class="drawing-winner drawing-winner--small">
+										<span class="drawing-winner__title">Winner:</span>
+										<span class="drawing-winner__user">User3456</span>
+									</div>
 								</div>
-								<div class="drawings__item-arrow">
+								<div class="drawing-item__arrow">
 									<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
 										<path d="M11.293 17.293L12.707 18.707L19.414 12L12.707 5.29297L11.293 6.70697L15.586 11H6V13H15.586L11.293 17.293Z"
 											fill="currentColor" />
 									</svg>
 								</div>
 							</div>
-							<!-- drawings__item -->
-							<div class="drawings__item">
-								<div class="drawings__item-img">
+							<!--! drawing-item -->
+							<div class="drawing-item drawing-item--hover">
+								<div class="drawing-item__img">
 									<picture>
-										<source srcset="./img/iphone.webp" type="image/webp">
-										<img loading="lazy" src="./img/iphone.jpg" width="48" height="48" alt="iPhone 14 Pro">
+										<source srcset="./img/airpods.webp" type="image/webp">
+										<img loading="lazy" src="./img/airpods.jpg" width="48" height="48" alt="AirPods">
 									</picture>
 								</div>
-								<div class="drawings__item-info">
-									<h4 class="drawings__item-name">iPhone 14 Pro</h4>
-									<p class="drawings__item-descr">Winner:
-										<span class="winner-user">clintmercs90</span>
-									</p>
+								<div class="drawing-item__info">
+									<h4 class="drawing-item__name">AirPods</h4>
+									<div class="drawing-winner drawing-winner--small">
+										<span class="drawing-winner__title">Winner:</span>
+										<span class="drawing-winner__user">User3456</span>
+									</div>
 								</div>
-								<div class="drawings__item-arrow">
+								<div class="drawing-item__arrow">
 									<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
 										<path d="M11.293 17.293L12.707 18.707L19.414 12L12.707 5.29297L11.293 6.70697L15.586 11H6V13H15.586L11.293 17.293Z"
 											fill="currentColor" />
 									</svg>
 								</div>
 							</div>
-
-							<!-- .drawings-hidden -->
-							<div class="drawings__hidden" style="display: none;">
-								<!-- drawings__item -->
-								<div class="drawings__item">
-									<div class="drawings__item-img">
-										<picture>
-											<source srcset="./img/airpods.webp" type="image/webp">
-											<img loading="lazy" src="./img/airpods.jpg" width="48" height="48" alt="AirPods">
-										</picture>
-									</div>
-									<div class="drawings__item-info">
-										<h4 class="drawings__item-name">AirPods</h4>
-										<p class="drawings__item-descr">Winner:
-											<span class="winner-user">clintmercs44</span>
-										</p>
-									</div>
-									<div class="drawings__item-arrow">
-										<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-											<path d="M11.293 17.293L12.707 18.707L19.414 12L12.707 5.29297L11.293 6.70697L15.586 11H6V13H15.586L11.293 17.293Z"
-												fill="currentColor" />
-										</svg>
+							<!--! drawing-item -->
+							<div class="drawing-item drawing-item--hover">
+								<div class="drawing-item__img">
+									<picture>
+										<source srcset="./img/airpods.webp" type="image/webp">
+										<img loading="lazy" src="./img/airpods.jpg" width="48" height="48" alt="AirPods">
+									</picture>
+								</div>
+								<div class="drawing-item__info">
+									<h4 class="drawing-item__name">AirPods</h4>
+									<div class="drawing-winner drawing-winner--small">
+										<span class="drawing-winner__title">Winner:</span>
+										<span class="drawing-winner__user">User3456</span>
 									</div>
 								</div>
-								<!-- drawings__item -->
-								<div class="drawings__item is-hidden">
-									<div class="drawings__item-img">
-										<picture>
-											<source srcset="./img/applewatch.webp" type="image/webp">
-											<img loading="lazy" src="./img/applewatch.jpg" width="48" height="48" alt="AppleWatch">
-										</picture>
-									</div>
-									<div class="drawings__item-info">
-										<h4 class="drawings__item-name">AppleWatch</h4>
-										<p class="drawings__item-descr">Winner:
-											<span class="winner-user">clintmercs32</span>
-										</p>
-									</div>
-									<div class="drawings__item-arrow">
-										<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-											<path d="M11.293 17.293L12.707 18.707L19.414 12L12.707 5.29297L11.293 6.70697L15.586 11H6V13H15.586L11.293 17.293Z"
-												fill="currentColor" />
-										</svg>
-									</div>
-								</div>
-								<!-- drawings__item -->
-								<div class="drawings__item">
-									<div class="drawings__item-img">
-										<picture>
-											<source srcset="./img/ipad.webp" type="image/webp">
-											<img loading="lazy" src="./img/ipad.jpg" width="48" height="48" alt="Apple iPad">
-										</picture>
-									</div>
-									<div class="drawings__item-info">
-										<h4 class="drawings__item-name">Apple iPad</h4>
-										<p class="drawings__item-descr">Winner:
-											<span class="winner-user">clintmercs26</span>
-										</p>
-									</div>
-									<div class="drawings__item-arrow">
-										<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-											<path d="M11.293 17.293L12.707 18.707L19.414 12L12.707 5.29297L11.293 6.70697L15.586 11H6V13H15.586L11.293 17.293Z"
-												fill="currentColor" />
-										</svg>
-									</div>
-								</div>
-								<!-- drawings__item -->
-								<div class="drawings__item">
-									<div class="drawings__item-img">
-										<picture>
-											<source srcset="./img/iphone.webp" type="image/webp">
-											<img loading="lazy" src="./img/iphone.jpg" width="48" height="48" alt="iPhone 14 Pro">
-										</picture>
-									</div>
-									<div class="drawings__item-info">
-										<h4 class="drawings__item-name">iPhone 14 Pro</h4>
-										<p class="drawings__item-descr">Winner:
-											<span class="winner-user">clintmercs90</span>
-										</p>
-									</div>
-									<div class="drawings__item-arrow">
-										<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-											<path d="M11.293 17.293L12.707 18.707L19.414 12L12.707 5.29297L11.293 6.70697L15.586 11H6V13H15.586L11.293 17.293Z"
-												fill="currentColor" />
-										</svg>
-									</div>
+								<div class="drawing-item__arrow">
+									<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+										<path d="M11.293 17.293L12.707 18.707L19.414 12L12.707 5.29297L11.293 6.70697L15.586 11H6V13H15.586L11.293 17.293Z"
+											fill="currentColor" />
+									</svg>
 								</div>
 							</div>
-							<!-- / .drawings-hidden -->
 						</div>
+						<!-- / drawings__list -->
 					</div>
 				</div>
 			</section>
@@ -292,78 +230,16 @@
 	</div>
 	<!-- / .page__wrapper -->
 
-
-
 	<!----------- Modals ------------->
-
-	<!-- Modal Profile Settings -->
-	<div class="modal modal-form" data-modal="modalProfile">
-		<div class="modal__overlay">
-			<div class="modal__content">
-				<div class="modal__close"></div>
-				<!-- profile-form -->
-				<div class="form profile-form">
-					<div class="form__header text-center">
-						<div class="profile-form__ava">
-							<!-- ava -->
-							<div class="ava ava-text ava--light" id="avaDefault">
-								<span class="ava__name">EK</span>
-							</div>
-							<!-- upload-photo -->
-							<button type="button" class="upload-ava is-hidden"></button>
-						</div>
-						<h3 class="form__header-title"><span class="text-grad">Profile</span> Settings</h3>
-					</div>
-					<div class="form__body">
-						<div class="form-field">
-							<label class="form-field__label">Email address</label>
-							<input type="email" class="form-field__input input-profile" id="userEmail" value="alma.sawson@example.com" autocomplete="off"
-								disabled>
-						</div>
-						<div class="form-field">
-							<label class="form-field__label">Referred by</label>
-							<input type="email" name="email" class="form-field__input input-profile" id="userReferred" value="georgia@example.com"
-								autocomplete="off" disabled>
-						</div>
-						<div class="form-field">
-							<label class="form-field__label">First Name</label>
-							<input type="text" name="first-name" class="form-field__input input-profile" id="userFirstName" value="Alma"
-								autocomplete="off" disabled>
-						</div>
-						<div class="form-field">
-							<label class="form-field__label">Last Name</label>
-							<input type="text" name="last-name" class="form-field__input input-profile" id="userLastName" value="Sawson"
-								autocomplete="off" disabled>
-						</div>
-						<div class="form-field">
-							<label class="form-field__label">Password</label>
-							<div class="form-field__box">
-								<input type="password" name="password" class="form-field__input input-profile input-password" id="userPassword"
-									value="AlvZYX" autocomplete="off" disabled>
-								<i class="ic-password pass-yes is-hidden"></i>
-							</div>
-						</div>
-						<button type="button" class="btn btn-stroke form__btn" id="edit-btn">Edit Profile</button>
-						<button type="button" class="btn form__btn is-hidden" id="update-btn">Update Profile</button>
-					</div>
-				</div>
-				<!-- / .profile-form -->
-			</div>
-		</div>
-	</div>
-	<!-- / Modal Profile Settings -->
-
 	<!-- Modal Referrals -->
 	<div class="modal modal-form modal-referrals" data-modal="modalReferrals">
 		<div class="modal__overlay">
 			<div class="modal__content">
 				<div class="modal__close"></div>
-
 				<div class="modal__header text-center">
 					<h3 class="modal__header-title"><span class="text-grad">Earn up to $2</span> from tickets your friends purchased</h3>
 					<p class="modal__header-descr">Give your friends a $5 discount to all ticket types.</p>
 				</div>
-
 				<!-- form -->
 				<form class="form referrals-form">
 					<div class="form form__body">
@@ -388,6 +264,60 @@
 		</div>
 	</div>
 	<!-- / Modal Referrals -->
+
+	<!-- Modal Profile Settings -->
+	<div class="modal modal-profile" data-modal="modalProfile">
+		<div class="modal__overlay">
+			<div class="modal__content">
+				<div class="modal__close"></div>
+				<!-- profile-form -->
+				<div class="form profile-form">
+					<div class="form__header text-center">
+						<div class="profile-form__ava">
+							<!-- ava -->
+							<div class="ava ava-text ava--light" id="avaDefault">
+								<span class="ava__name">EK</span>
+							</div>
+							<!-- upload-photo -->
+							<button type="button" class="upload-ava is-hidden"></button>
+						</div>
+						<h3 class="form__header-title"><span class="text-grad">Profile</span> Settings</h3>
+					</div>
+					<div class="form__body">
+						<div class="form-field">
+							<label class="form-field__label">Email address</label>
+							<input type="email" class="form-field__input input-profile" id="userEmail" value="alma.sawson@example.com" autocomplete="off"
+								disabled>
+						</div>
+						<div class="form-field">
+							<label class="form-field__label">First Name</label>
+							<input type="text" name="first-name" class="form-field__input input-profile" id="userFirstName" value="Alma"
+								autocomplete="off" disabled>
+						</div>
+						<div class="form-field">
+							<label class="form-field__label">Last Name</label>
+							<input type="text" name="last-name" class="form-field__input input-profile" id="userLastName" value="Sawson"
+								autocomplete="off" disabled>
+						</div>
+						<div class="form-field password-field">
+							<label class="form-field__label">Password</label>
+							<div class="form-field__box">
+								<input type="password" name="password" class="form-field__input input-profile input-password" id="userPassword"
+									value="AlvZYX" autocomplete="off" disabled>
+								<i class="ic-password pass-yes is-hidden"></i>
+							</div>
+						</div>
+						<button type="button" class="btn btn-stroke form__btn" id="edit-btn">Edit Profile</button>
+						<button type="button" class="btn form__btn is-hidden" id="update-btn">Update Profile</button>
+					</div>
+
+					<div class="referred-by">Referred by: <span id="referred">georgia@example.com</span></div>
+				</div>
+				<!-- / .profile-form -->
+			</div>
+		</div>
+	</div>
+	<!-- / Modal Profile Settings -->
 
 	<!-- Modal Transactions History -->
 	<div class="modal modal-transactions" data-modal="modalTransactions">
@@ -578,7 +508,7 @@
 								<button class="counter__minus"></button>
 								<div class="counter__field">
 									<div class="ic-ticket ic-ticket--dark"></div>
-									<input type="text" class="counter__input" value="1">
+									<input type="number" class="counter__input" value="1">
 								</div>
 								<button class="counter__plus"></button>
 							</div>

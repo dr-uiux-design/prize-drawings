@@ -1,3 +1,5 @@
+"use strict"
+
 const body = document.body; // переменная body
 
 
@@ -239,35 +241,41 @@ successOk.addEventListener('click', () => {
 });
 
 /* ------------------- Couner -------------------- */
-const minusBtn = document.querySelector('.counter__minus');
-const plusBtn = document.querySelector('.counter__plus');
-const inputField = document.querySelector('.counter__input');
-const selectBtns = document.querySelectorAll('.selects-tickets__btn');
+const counters = document.querySelectorAll('.counter');
 
-let counterValue = 1;
+counters.forEach(counter => {
+	const minusBtn = counter.querySelector('.counter__minus');
+	const plusBtn = counter.querySelector('.counter__plus');
+	const inputField = counter.querySelector('.counter__input');
+	
+	let counterValue = parseInt(inputField.value);
 
-minusBtn.addEventListener('click', () => {
-  if (counterValue > 1) {
-    counterValue--;
-    inputField.value = counterValue;
-  }
+	minusBtn.addEventListener('click', () => {
+		if (counterValue > 1) {
+			counterValue--;
+			inputField.value = counterValue;
+		}
+	});
+
+	plusBtn.addEventListener('click', () => {
+		counterValue++;
+		inputField.value = counterValue;
+	});
+
+	const selectBtns = counter.querySelectorAll('.selects-tickets__btn');
+
+	selectBtns.forEach(btn => {
+		btn.addEventListener('click', () => {
+			counterValue = parseInt(btn.textContent);
+			inputField.value = counterValue;
+			selectBtns.forEach(btn => {
+				btn.classList.remove('active');
+			});
+			btn.classList.add('active');
+		});
+	});
 });
 
-plusBtn.addEventListener('click', () => {
-  counterValue++;
-  inputField.value = counterValue;
-});
-
-selectBtns.forEach(btn => {
-  btn.addEventListener('click', () => {
-    counterValue = parseInt(btn.textContent);
-    inputField.value = counterValue;
-    selectBtns.forEach(btn => {
-      btn.classList.remove('active');
-    });
-    btn.classList.add('active');
-  });
-});
 
 
 /* ------------------- Tabs -------------------- */
@@ -284,8 +292,8 @@ tabSell.addEventListener('click', () => {
 
 	formSell.classList.add('is-active');
 	formSell.classList.remove('is-hidden');
-	formBuy.classList.add('is-hidden');	
-	
+	formBuy.classList.add('is-hidden');
+
 	paymentBuy.classList.add('is-hidden');
 	paymentBuy.classList.remove('is-active');
 	paymentSell.classList.add('is-active');
@@ -304,4 +312,42 @@ tabBuy.addEventListener('click', () => {
 	paymentSell.classList.add('is-hidden');
 	paymentBuy.classList.add('is-active');
 	paymentBuy.classList.remove('is-hidden');
+});
+
+/* ------------------- Slider Waiting Drawing -------------------- */
+$('.waiting-drawing-slider').slick({
+  arrows: false,
+  dots: true,
+  infinite: false,
+  slidesToShow: 4,
+  slidesToScroll: 1,
+  autoplay: true,
+  autoplaySpeed: 3000,
+  speed: 500, // Установите значение speed на более низкое значение, например 500
+  pauseOnHover: true,
+  dots: false,
+  draggable: true,
+  responsive: [
+    {
+      breakpoint: 1025,
+      settings: {
+        slidesToShow: 3,
+        slidesToScroll: 3,
+      }
+    },
+    {
+      breakpoint: 844,
+      settings: {
+        slidesToShow: 2,
+        slidesToScroll: 2,
+      }
+    },
+    {
+      breakpoint: 599,
+      settings: {
+        slidesToShow: 1,
+        slidesToScroll: 1,
+      }
+    },
+  ]
 });

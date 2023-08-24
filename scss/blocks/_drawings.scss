@@ -36,114 +36,8 @@
 
   &__descr {
     color: var(--gray-500);
-  }
-
-  // drawings__item
-  &__item {
-    cursor: pointer;
-    background: #ffffff;
-    border-radius: 16px;
-    padding: 16px;
-    display: flex;
-    align-items: center;
-    position: relative;
-    transition: all 0.3s ease-in-out;
-    transform: scale(1.02);
-
-    &:not(:last-child) {
-      margin-bottom: 16px;
-    }
-
-    &-img {
-      flex-shrink: 0;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      width: 64px;
-      height: 64px;
-      border: 1px solid rgba(0, 0, 0, 0.15);
-      border-radius: 12px;
-      margin-right: 16px;
-      img {
-        width: 48px;
-        height: 48px;
-      }
-    }
-
-    &-info {
-      padding-right: 16px;
-    }
-
-    &-name {
-      color: var(--dark-800);
-      font-weight: 500;
-      font-size: 18px;
-      line-height: 120%;
-      margin-bottom: 4px;
-
-      @media (max-width: 390px) {
-        font-size: 16px;
-      }
-    }
-
-    &-descr {
-      color: var(--gray-500);
-      font-weight: 400;
-      font-size: 14px;
-      line-height: 140%;
-
-      @media (max-width: 390px) {
-        span {
-          display: block;
-        }
-      }
-    }
-
-    &-arrow {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      width: 48px;
-      height: 48px;
-      border: 1px solid rgba(0, 0, 0, 0.15);
-      border-radius: 50%;
-      position: absolute;
-      right: 16px;
-      top: 50%;
-      transform: translateY(-50%);
-      transition: all 0.3s ease-in-out;
-
-      @media (max-width: 480px) {
-        width: 40px;
-        height: 40px;
-      }
-    }
-
-    &:hover {
-      box-shadow: 0px 24px 40px rgba(77, 83, 103, 0.24);
-      transform: scale(1.02);
-      transform: translateX(10px);
-
-      .drawings__item-arrow {
-        color: #fff;
-        border: 1px solid transparent;
-        background-color: var(--dark-800);
-      }
-    }
-  }
-
-  @media (max-width: 1024px) {
-    .drawings__item:hover {
-      transform: none !important;
-      box-shadow: none !important;
-    }
-
-    .drawings__item:hover .drawings__item-arrow {
-      border: 1px solid rgba(0, 0, 0, 0.15);
-      background-color: transparent;
-      svg {
-        color: var(--dark-800);
-      }
+    @media (max-width: 390px) {
+      margin-top: 16px;
     }
   }
 
@@ -161,9 +55,9 @@
       text-decoration: none;
       border: 1px solid #cccccc;
       border-radius: 100px;
-      padding: 8px 12px;
+      padding: 8px 16px;
       font-size: 14px;
-      font-weight: 400;
+      font-weight: 500;
       line-height: 1;
       position: absolute;
       top: 0;
@@ -175,24 +69,5 @@
         background-color: var(--dark-800);
       }
     }
-  }
-}
-
-// History Page
-.history-page {
-  .drawings__container {
-    display: block;
-    max-width: 800px;
-  }
-
-  .drawings__title {
-    font-size: 32px;
-    @media (max-width: 480px) {
-      font-size: 24px;
-    }
-  }
-
-  .drawings__list {
-    width: 100%;
   }
 }

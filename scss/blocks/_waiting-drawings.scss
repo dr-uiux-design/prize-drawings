@@ -1,0 +1,38 @@
+.waiting-drawing {
+  &__inner {
+    background: var(--bg-body);
+    padding: 10px 0;
+  }
+
+  &__status {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 8px;
+
+    &-label {
+      color: var(--dark-800);
+      font-size: 14px;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+    }
+  }
+
+  &__list {
+    list-style: none;
+  }
+
+  .drawing-item {
+    margin-bottom: 0;
+  }
+}
+
+// Slider
+.waiting-drawing-slider {
+  .slick-list {
+    margin: 0 -5px;
+  }
+  .slick-slide {
+    margin: 0 5px;
+  }
+}

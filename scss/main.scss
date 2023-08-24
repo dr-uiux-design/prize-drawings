@@ -1,3 +1,4 @@
+@import "./mixins";
 @import "./base/03-default";
 @import "./style-guide";
 @import "./components-import";
@@ -5,9 +6,9 @@
 /* ------------------- BLOCKS -------------------- */
 @import "./blocks/header";
 @import "./blocks/footer";
-// @import "./blocks/footer";
 @import "./blocks/wish-list";
+@import "./blocks/waiting-drawings";
 @import "./blocks/drawings";
 
 /* ------------------- PAGES -------------------- */
-@import "./pages/privacy";
+@import "./pages/drawings-history";

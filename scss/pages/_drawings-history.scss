@@ -1,0 +1,46 @@
+.history-page {
+  &__drawings-container {
+    display: block;
+    position: relative;
+  }
+
+  .back-page-link {
+    position: absolute;
+    top: 32px;
+    left: 16px;
+  }
+
+  .drawings__history {
+    display: block;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 64px 0;
+  }
+
+  .drawing-item {
+    border: none;
+  }
+
+  .drawings__title {
+    font-size: 32px;
+    @media (max-width: 480px) {
+      font-size: 24px;
+    }
+  }
+
+  .drawings__list {
+    width: 100%;
+  }
+}
+
+@media (max-width: 900px) {
+  .history-page .back-page-link {
+    top: 16px;
+  }
+}
+
+@media (max-width: 390px) {
+  .history-page .drawings__descr {
+    margin-top: 0;
+  }
+}

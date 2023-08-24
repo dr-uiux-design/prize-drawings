@@ -1,0 +1,15 @@
+@mixin scrollbar__hor {
+  &::-webkit-scrollbar {
+    height: 4px;
+    background: var(--gray-200);
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: var(--dark-800);
+    border-radius: 100px;
+  }
+
+  &::-webkit-scrollbar-thumb:hover {
+    background-color: var(--dark-800);
+  }
+}

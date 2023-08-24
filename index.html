@@ -8,7 +8,7 @@
 	<!-- Favicon (https://realfavicongenerator.net/) -->
 	<link rel="icon" type="image/svg+xml" href="./favicon/favicon.svg">
 	<link rel="icon" type="image/png" href="./favicon/favicon.png">
-	<title>Название сайта</title>
+	<title></title>
 
 	<!-- Fonts -->
 	<link rel="preconnect" href="https://fonts.googleapis.com">
@@ -20,9 +20,10 @@
 	<link rel="stylesheet" href="./css/main.min.css">
 
 	<!-- JS -->
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
-
+	<script defer src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+	<script defer src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+	<script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
+	<script defer src="js/animation.js"></script>
 	<script defer src="js/main.js"></script>
 </head>
 
@@ -40,7 +41,7 @@
 				<div class="header__right">
 					<div class="header__balance balance">
 						<div class="balance__field">
-							<div class="ic-ticket ic-ticket--dark"></div>
+							<i class="ic-ticket ic-ticket--dark"></i>
 							<div class="balance__sum">0.00</div>
 						</div>
 						<button type="button" class="balance__btn js-modal-btn" data-modal-open="modalPayment">
@@ -54,10 +55,6 @@
 					<div class="header__user user-account">
 						<div class="user-account__ava ava ava-text ava--light">
 							<span class="ava__name">EK</span>
-						</div>
-						<div class="user-account__box">
-							<div class="user-account__name">Eric K.</div>
-							<div class="user-account__settings">settings</div>
 						</div>
 
 						<!-- .popup-settings -->
@@ -89,9 +86,16 @@
 			<!-- WISH-LIST -->
 			<section class="wish-list">
 				<div class="container">
-					<div class="wish-list__head">
-						<h1 class="title-big wish-list__title"><span class="text-grad">Wish</span> list</h1>
-						<p class="text-18 wish-list__descr">Pick a prize you would like to win</p>
+					<div class="wish-list__head text-center">
+						<h1 class="title-big wish-list__title"><span class="text-grad">Next</span> Drawing</h1>
+						<div class="drawing-date">
+							<span class="drawing-date__timer">13d / 20:45:31</span>
+						</div>
+						<p class="text-18 wish-list__descr"></p>
+						<button type="button" class="btn-reset btn btn-anim js-modal-btn" data-modal-open="modalPayment">
+							<span btn__label>Buy Tickets</span>
+							<span class="btn-anim__gradient"></span>
+						</button>
 					</div>
 					<!-- / .wish-list__head -->
 
@@ -128,16 +132,7 @@
 									<!-- / .card-prize__info-head -->
 									<div class="card-prize__info-footer">
 										<div class="card-prize__info-ticket">
-											<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-												<path d="M6.8113 14.5021L6.8113 9.097H8.06712L8.06712 14.5021L6.8113 14.5021Z" fill="currentColor" />
-												<path d="M9.37244 14.5035L9.37244 9.09842L10.6283 9.09842L10.6283 14.5035L9.37244 14.5035Z" fill="currentColor" />
-												<path d="M13.188 14.5007L11.935 14.5007L11.935 9.09559H13.188L13.188 14.5007Z" fill="currentColor" />
-												<path
-													d="M11.9322 1.37964C11.8233 1.90431 11.5022 2.35262 11.0653 2.63405C10.7598 2.83204 10.3935 2.94659 10.0018 2.94517C9.61144 2.94517 9.24657 2.82921 8.93828 2.63405C8.50128 2.35262 8.18167 1.90573 8.07136 1.37964H5.31365C4.5726 1.37964 3.97297 1.97927 3.97156 2.72173L3.97439 17.2796C3.97439 18.0207 4.57543 18.6217 5.31648 18.6217H8.07985C8.19581 18.0928 8.52815 17.6417 8.97787 17.3673C9.27769 17.1835 9.627 17.0774 10.006 17.0774C10.3822 17.0774 10.7343 17.1835 11.0341 17.3673C11.4839 17.6417 11.8134 18.0928 11.9322 18.6217L14.6871 18.6217C15.4281 18.6217 16.0291 18.0207 16.0291 17.2796L16.0291 2.72173C16.0291 1.98068 15.4281 1.37964 14.6871 1.37964L11.9322 1.37964ZM14.9105 6.15968L13.8923 6.15968V7.45227H14.9105L14.9105 17.5809L12.8373 17.5809C12.2532 16.6291 11.2024 15.9913 10.0074 15.9927C8.811 15.9927 7.76165 16.6291 7.17758 17.5809H5.09303L5.09303 7.44944L6.05187 7.44944L6.05187 6.15685H5.09303L5.0902 2.4205L7.15778 2.4205C7.73902 3.38641 8.79827 4.0327 10.0032 4.0327C11.2081 4.0327 12.2659 3.38499 12.8486 2.4205H14.9077L14.9105 6.15968Z"
-													fill="currentColor" />
-												<path d="M7.52406 6.26857H9.39931V7.5244L7.52406 7.5244L7.52406 6.26857Z" fill="currentColor" />
-												<path d="M12.4441 7.52298L10.5689 7.52298L10.5689 6.26716L12.4441 6.26716L12.4441 7.52298Z" fill="currentColor" />
-											</svg>
+											<i class="ic-ticket ic-ticket--light"></i>
 											<span class="tickets-num">1</span>
 										</div>
 										<div class="card-prize__info-users">
@@ -207,143 +202,197 @@
 			</section>
 			<!-- / WISH-LIST -->
 
+			<!-- WAITING FOR DRAWING -->
+			<section class="waiting-drawing">
+				<div class="container">
+					<div class="waiting-drawing__status">
+						<span class="status-dot status-dot--off"></span>
+						<span class="waiting-drawing__status-label">Waiting for Drawing</span>
+					</div>
+				</div>
+				<div class="waiting-drawing__inner">
+					<div class="container">
+						<div class="waiting-drawing__list waiting-drawing-slider">
+							<!--! drawing-item -->
+							<div class="drawing-item drawing-item--small">
+								<div class="drawing-item__img">
+									<picture>
+										<source srcset="./img/iphone.webp" type="image/webp">
+										<img loading="lazy" src="./img/iphone.jpg" width="48" height="48" alt="iPhone">
+									</picture>
+								</div>
+								<div class="drawing-item__info">
+									<h4 class="drawing-item__name">AirPods <span class="drawing-number">#15</span></h4>
+									<div class="drawing-date drawing-date--small">
+										<span class="drawing-date__title">After:</span>
+										<span class="drawing-date__timer">13d / 20:45:31</span>
+									</div>
+								</div>
+							</div>
+							<!--! drawing-item -->
+							<div class="drawing-item drawing-item--small">
+								<div class="drawing-item__img">
+									<picture>
+										<source srcset="./img/iphone.webp" type="image/webp">
+										<img loading="lazy" src="./img/iphone.jpg" width="48" height="48" alt="iPhone">
+									</picture>
+								</div>
+								<div class="drawing-item__info">
+									<h4 class="drawing-item__name">AirPods <span class="drawing-number">#15</span></h4>
+									<div class="drawing-date drawing-date--small">
+										<span class="drawing-date__title">After:</span>
+										<span class="drawing-date__timer">13d / 20:45:31</span>
+									</div>
+								</div>
+							</div>
+							<!--! drawing-item -->
+							<div class="drawing-item drawing-item--small">
+								<div class="drawing-item__img">
+									<picture>
+										<source srcset="./img/iphone.webp" type="image/webp">
+										<img loading="lazy" src="./img/iphone.jpg" width="48" height="48" alt="iPhone">
+									</picture>
+								</div>
+								<div class="drawing-item__info">
+									<h4 class="drawing-item__name">AirPods <span class="drawing-number">#15</span></h4>
+									<div class="drawing-date drawing-date--small">
+										<span class="drawing-date__title">After:</span>
+										<span class="drawing-date__timer">13d / 20:45:31</span>
+									</div>
+								</div>
+							</div>
+							<!--! drawing-item -->
+							<div class="drawing-item drawing-item--small">
+								<div class="drawing-item__img">
+									<picture>
+										<source srcset="./img/iphone.webp" type="image/webp">
+										<img loading="lazy" src="./img/iphone.jpg" width="48" height="48" alt="iPhone">
+									</picture>
+								</div>
+								<div class="drawing-item__info">
+									<h4 class="drawing-item__name">AirPods <span class="drawing-number">#15</span></h4>
+									<div class="drawing-date drawing-date--small">
+										<span class="drawing-date__title">After:</span>
+										<span class="drawing-date__timer">13d / 20:45:31</span>
+									</div>
+								</div>
+							</div>
+							<!--! drawing-item -->
+							<div class="drawing-item drawing-item--small">
+								<div class="drawing-item__img">
+									<picture>
+										<source srcset="./img/iphone.webp" type="image/webp">
+										<img loading="lazy" src="./img/iphone.jpg" width="48" height="48" alt="iPhone">
+									</picture>
+								</div>
+								<div class="drawing-item__info">
+									<h4 class="drawing-item__name">AirPods <span class="drawing-number">#15</span></h4>
+									<div class="drawing-date drawing-date--small">
+										<span class="drawing-date__title">After:</span>
+										<span class="drawing-date__timer">13d / 20:45:31</span>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+				</div>
+			</section>
+			<!-- / WAITING FOR DRAWING -->
+
 			<!-- DRAWINGS -->
 			<section class="drawings">
 				<div class="container drawings__container">
-					<!-- drawings__active -->
+					<!--! drawings__active -->
 					<div class="drawings__active">
 						<div class="drawings__head">
-							<h3 class="drawings__title">Active Drawings</h3>
+							<h3 class="drawings__title">My Active Drawings</h3>
 							<p class="drawings__descr">All active drawing with your tickets are show below</p>
 						</div>
+						<!--! drawings__list -->
 						<div class="drawings__list">
-							<!-- drawings__item -->
-							<div class="drawings__item">
-								<div class="drawings__item-img">
+							<!--! drawing-item -->
+							<div class="drawing-item drawing-item--hover">
+								<div class="drawing-item__img">
 									<picture>
 										<source srcset="./img/airpods.webp" type="image/webp">
-										<img loading="lazy" src="./img/airpods.jpg" width="48" height="48" alt="">
+										<img loading="lazy" src="./img/airpods.jpg" width="48" height="48" alt="AirPods">
 									</picture>
 								</div>
-								<div class="drawings__item-info">
-									<h4 class="drawings__item-name">AirPods #15</h4>
-									<p class="drawings__item-descr">Drawing after <span class="drawings__timer">13d 20:45:31</span></p>
+								<div class="drawing-item__info">
+									<h4 class="drawing-item__name">AirPods <span class="drawing-number">#15</span></h4>
+									<div class="drawing-date drawing-date--small">
+										<span class="drawing-date__title">After:</span>
+										<span class="drawing-date__timer">13d / 20:45:31</span>
+									</div>
 								</div>
-								<div class="drawings__item-arrow">
+								<div class="drawing-item__arrow">
 									<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
 										<path d="M11.293 17.293L12.707 18.707L19.414 12L12.707 5.29297L11.293 6.70697L15.586 11H6V13H15.586L11.293 17.293Z"
 											fill="currentColor" />
 									</svg>
 								</div>
 							</div>
-							<!-- drawings__item -->
-							<div class="drawings__item">
-								<div class="drawings__item-img">
+							<!--! drawing-item -->
+							<div class="drawing-item drawing-item--hover">
+								<div class="drawing-item__img">
 									<picture>
-										<source srcset="./img/airpods.webp" type="image/webp">
-										<img loading="lazy" src="./img/airpods.jpg" width="48" height="48" alt="">
+										<source srcset="./img/applewatch.webp" type="image/webp">
+										<img loading="lazy" src="./img/applewatch.jpg" width="48" height="48" alt="AppleWatch">
 									</picture>
 								</div>
-								<div class="drawings__item-info">
-									<h4 class="drawings__item-name">AirPods #2</h4>
-									<p class="drawings__item-descr">Drawing after <span class="drawings__timer">13d 20:45:31</span></p>
+								<div class="drawing-item__info">
+									<h4 class="drawing-item__name">AppleWatch <span class="drawing-number">#15</span></h4>
+									<div class="drawing-date drawing-date--small">
+										<span class="drawing-date__title">After:</span>
+										<span class="drawing-date__timer">13d / 20:45:31</span>
+									</div>
 								</div>
-								<div class="drawings__item-arrow">
+								<div class="drawing-item__arrow">
 									<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
 										<path d="M11.293 17.293L12.707 18.707L19.414 12L12.707 5.29297L11.293 6.70697L15.586 11H6V13H15.586L11.293 17.293Z"
 											fill="currentColor" />
 									</svg>
 								</div>
 							</div>
-							<!-- drawings__item -->
-							<div class="drawings__item">
-								<div class="drawings__item-img">
+							<!--! drawing-item -->
+							<div class="drawing-item drawing-item--hover">
+								<div class="drawing-item__img">
 									<picture>
-										<source srcset="./img/airpods.webp" type="image/webp">
-										<img loading="lazy" src="./img/airpods.jpg" width="48" height="48" alt="">
+										<source srcset="./img/iPad.webp" type="image/webp">
+										<img loading="lazy" src="./img/iPad.jpg" width="48" height="48" alt="iPad">
 									</picture>
 								</div>
-								<div class="drawings__item-info">
-									<h4 class="drawings__item-name">AirPods #15</h4>
-									<p class="drawings__item-descr">Drawing after <span class="drawings__timer">13d 20:45:31</span></p>
+								<div class="drawing-item__info">
+									<h4 class="drawing-item__name">iPad <span class="drawing-number">#15</span></h4>
+									<div class="drawing-date drawing-date--small">
+										<span class="drawing-date__title">After:</span>
+										<span class="drawing-date__timer">13d / 20:45:31</span>
+									</div>
 								</div>
-								<div class="drawings__item-arrow">
+								<div class="drawing-item__arrow">
 									<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
 										<path d="M11.293 17.293L12.707 18.707L19.414 12L12.707 5.29297L11.293 6.70697L15.586 11H6V13H15.586L11.293 17.293Z"
 											fill="currentColor" />
 									</svg>
 								</div>
 							</div>
-							<!-- drawings__item -->
-							<div class="drawings__item">
-								<div class="drawings__item-img">
+							<!--! drawing-item -->
+							<div class="drawing-item drawing-item--hover">
+								<div class="drawing-item__img">
 									<picture>
-										<source srcset="./img/airpods.webp" type="image/webp">
-										<img loading="lazy" src="./img/airpods.jpg" width="48" height="48" alt="">
+										<source srcset="./img/iphone.webp" type="image/webp">
+										<img loading="lazy" src="./img/iphone.jpg" width="48" height="48" alt="AppleWatch">
 									</picture>
 								</div>
-								<div class="drawings__item-info">
-									<h4 class="drawings__item-name">AirPods #15</h4>
-									<p class="drawings__item-descr">Drawing after <span class="drawings__timer">13d 20:45:31</span></p>
+								<div class="drawing-item__info">
+									<h4 class="drawing-item__name">iPhone 14 <span class="drawing-number">#15</span></h4>
+									<div class="drawing-date drawing-date--small">
+										<span class="drawing-date__title">After:</span>
+										<span class="drawing-date__timer">13d / 20:45:31</span>
+									</div>
 								</div>
-								<div class="drawings__item-arrow">
-									<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-										<path d="M11.293 17.293L12.707 18.707L19.414 12L12.707 5.29297L11.293 6.70697L15.586 11H6V13H15.586L11.293 17.293Z"
-											fill="currentColor" />
-									</svg>
-								</div>
-							</div>
-							<!-- drawings__item -->
-							<div class="drawings__item">
-								<div class="drawings__item-img">
-									<picture>
-										<source srcset="./img/airpods.webp" type="image/webp">
-										<img loading="lazy" src="./img/airpods.jpg" width="48" height="48" alt="">
-									</picture>
-								</div>
-								<div class="drawings__item-info">
-									<h4 class="drawings__item-name">AirPods #15</h4>
-									<p class="drawings__item-descr">Drawing after <span class="drawings__timer">13d 20:45:31</span></p>
-								</div>
-								<div class="drawings__item-arrow">
-									<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-										<path d="M11.293 17.293L12.707 18.707L19.414 12L12.707 5.29297L11.293 6.70697L15.586 11H6V13H15.586L11.293 17.293Z"
-											fill="currentColor" />
-									</svg>
-								</div>
-							</div>
-							<!-- drawings__item -->
-							<div class="drawings__item">
-								<div class="drawings__item-img">
-									<picture>
-										<source srcset="./img/airpods.webp" type="image/webp">
-										<img loading="lazy" src="./img/airpods.jpg" width="48" height="48" alt="">
-									</picture>
-								</div>
-								<div class="drawings__item-info">
-									<h4 class="drawings__item-name">AirPods #15</h4>
-									<p class="drawings__item-descr">Drawing after <span class="drawings__timer">13d 20:45:31</span></p>
-								</div>
-								<div class="drawings__item-arrow">
-									<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-										<path d="M11.293 17.293L12.707 18.707L19.414 12L12.707 5.29297L11.293 6.70697L15.586 11H6V13H15.586L11.293 17.293Z"
-											fill="currentColor" />
-									</svg>
-								</div>
-							</div>
-							<!-- drawings__item -->
-							<div class="drawings__item">
-								<div class="drawings__item-img">
-									<picture>
-										<source srcset="./img/airpods.webp" type="image/webp">
-										<img loading="lazy" src="./img/airpods.jpg" width="48" height="48" alt="">
-									</picture>
-								</div>
-								<div class="drawings__item-info">
-									<h4 class="drawings__item-name">AirPods #15</h4>
-									<p class="drawings__item-descr">Drawing after <span class="drawings__timer">13d 20:45:31</span></p>
-								</div>
-								<div class="drawings__item-arrow">
+								<div class="drawing-item__arrow">
 									<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
 										<path d="M11.293 17.293L12.707 18.707L19.414 12L12.707 5.29297L11.293 6.70697L15.586 11H6V13H15.586L11.293 17.293Z"
 											fill="currentColor" />
@@ -352,93 +401,97 @@
 							</div>
 						</div>
 					</div>
-
-					<!-- drawings__history -->
+					<!--! drawings__history -->
 					<div class="drawings__history">
-						<a href="./history.html" target="_blank" class="drawings__history-more">View all</a>
+						<a href="./drawings-history.html" class="drawings__history-more">View all</a>
 						<div class="drawings__head">
-							<h3 class="drawings__title">History</h3>
+							<h3 class="drawings__title">My History</h3>
 							<p class="drawings__descr">Completed drawings width your participation</p>
 						</div>
+						<!-- drawings__list -->
 						<div class="drawings__list">
-							<!-- drawings__item -->
-							<div class="drawings__item">
-								<div class="drawings__item-img">
+							<!--! drawing-item -->
+							<div class="drawing-item drawing-item--hover">
+								<div class="drawing-item__img">
 									<picture>
 										<source srcset="./img/airpods.webp" type="image/webp">
 										<img loading="lazy" src="./img/airpods.jpg" width="48" height="48" alt="AirPods">
 									</picture>
 								</div>
-								<div class="drawings__item-info">
-									<h4 class="drawings__item-name">AirPods</h4>
-									<p class="drawings__item-descr">Winner:
-										<span class="winner-user">clintmercs44</span>
-									</p>
+								<div class="drawing-item__info">
+									<h4 class="drawing-item__name">AirPods</h4>
+									<div class="drawing-winner drawing-winner--small">
+										<span class="drawing-winner__title">Winner:</span>
+										<span class="drawing-winner__user">User3456</span>
+									</div>
 								</div>
-								<div class="drawings__item-arrow">
+								<div class="drawing-item__arrow">
 									<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
 										<path d="M11.293 17.293L12.707 18.707L19.414 12L12.707 5.29297L11.293 6.70697L15.586 11H6V13H15.586L11.293 17.293Z"
 											fill="currentColor" />
 									</svg>
 								</div>
 							</div>
-							<!-- drawings__item -->
-							<div class="drawings__item">
-								<div class="drawings__item-img">
+							<!--! drawing-item -->
+							<div class="drawing-item drawing-item--hover">
+								<div class="drawing-item__img">
 									<picture>
-										<source srcset="./img/applewatch.webp" type="image/webp">
-										<img loading="lazy" src="./img/applewatch.jpg" width="48" height="48" alt="AppleWatch">
+										<source srcset="./img/airpods.webp" type="image/webp">
+										<img loading="lazy" src="./img/airpods.jpg" width="48" height="48" alt="AirPods">
 									</picture>
 								</div>
-								<div class="drawings__item-info">
-									<h4 class="drawings__item-name">AppleWatch</h4>
-									<p class="drawings__item-descr">Winner:
-										<span class="winner-user">clintmercs32</span>
-									</p>
+								<div class="drawing-item__info">
+									<h4 class="drawing-item__name">AirPods</h4>
+									<div class="drawing-winner drawing-winner--small">
+										<span class="drawing-winner__title">Winner:</span>
+										<span class="drawing-winner__user">User3456</span>
+									</div>
 								</div>
-								<div class="drawings__item-arrow">
+								<div class="drawing-item__arrow">
 									<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
 										<path d="M11.293 17.293L12.707 18.707L19.414 12L12.707 5.29297L11.293 6.70697L15.586 11H6V13H15.586L11.293 17.293Z"
 											fill="currentColor" />
 									</svg>
 								</div>
 							</div>
-							<!-- drawings__item -->
-							<div class="drawings__item">
-								<div class="drawings__item-img">
+							<!--! drawing-item -->
+							<div class="drawing-item drawing-item--hover">
+								<div class="drawing-item__img">
 									<picture>
-										<source srcset="./img/ipad.webp" type="image/webp">
-										<img loading="lazy" src="./img/ipad.jpg" width="48" height="48" alt="Apple iPad">
+										<source srcset="./img/airpods.webp" type="image/webp">
+										<img loading="lazy" src="./img/airpods.jpg" width="48" height="48" alt="AirPods">
 									</picture>
 								</div>
-								<div class="drawings__item-info">
-									<h4 class="drawings__item-name">Apple iPad</h4>
-									<p class="drawings__item-descr">Winner:
-										<span class="winner-user">clintmercs26</span>
-									</p>
+								<div class="drawing-item__info">
+									<h4 class="drawing-item__name">AirPods</h4>
+									<div class="drawing-winner drawing-winner--small">
+										<span class="drawing-winner__title">Winner:</span>
+										<span class="drawing-winner__user">User3456</span>
+									</div>
 								</div>
-								<div class="drawings__item-arrow">
+								<div class="drawing-item__arrow">
 									<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
 										<path d="M11.293 17.293L12.707 18.707L19.414 12L12.707 5.29297L11.293 6.70697L15.586 11H6V13H15.586L11.293 17.293Z"
 											fill="currentColor" />
 									</svg>
 								</div>
 							</div>
-							<!-- drawings__item -->
-							<div class="drawings__item">
-								<div class="drawings__item-img">
+							<!--! drawing-item -->
+							<div class="drawing-item drawing-item--hover">
+								<div class="drawing-item__img">
 									<picture>
-										<source srcset="./img/iphone.webp" type="image/webp">
-										<img loading="lazy" src="./img/iphone.jpg" width="48" height="48" alt="iPhone 14 Pro">
+										<source srcset="./img/airpods.webp" type="image/webp">
+										<img loading="lazy" src="./img/airpods.jpg" width="48" height="48" alt="AirPods">
 									</picture>
 								</div>
-								<div class="drawings__item-info">
-									<h4 class="drawings__item-name">iPhone 14 Pro</h4>
-									<p class="drawings__item-descr">Winner:
-										<span class="winner-user">clintmercs90</span>
-									</p>
+								<div class="drawing-item__info">
+									<h4 class="drawing-item__name">AirPods</h4>
+									<div class="drawing-winner drawing-winner--small">
+										<span class="drawing-winner__title">Winner:</span>
+										<span class="drawing-winner__user">User3456</span>
+									</div>
 								</div>
-								<div class="drawings__item-arrow">
+								<div class="drawing-item__arrow">
 									<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
 										<path d="M11.293 17.293L12.707 18.707L19.414 12L12.707 5.29297L11.293 6.70697L15.586 11H6V13H15.586L11.293 17.293Z"
 											fill="currentColor" />
@@ -446,6 +499,7 @@
 								</div>
 							</div>
 						</div>
+						<!-- / drawings__list -->
 					</div>
 				</div>
 			</section>
@@ -470,12 +524,11 @@
 
 
 	<!----------- Modals ------------->
-	<!-- Modal Room -->
+	<!-- Modal Referrals -->
 	<div class="modal modal-form modal-referrals" data-modal="modalReferrals">
 		<div class="modal__overlay">
 			<div class="modal__content">
 				<div class="modal__close"></div>
-
 				<div class="modal__header text-center">
 					<h3 class="modal__header-title"><span class="text-grad">Earn up to $2</span> from tickets your friends purchased</h3>
 					<p class="modal__header-descr">Give your friends a $5 discount to all ticket types.</p>
@@ -504,7 +557,7 @@
 			</div>
 		</div>
 	</div>
-	<!-- / Modal Room -->
+	<!-- / Modal Referrals -->
 
 	<!-- Modal Confirmation -->
 	<div class="modal modal-info modal-confirmation" data-modal="modalConfirmation">
@@ -540,7 +593,6 @@
 		</div>
 	</div>
 	<!-- / Modal Success -->
-
 
 	<!-- Modal Profile Settings -->
 	<div class="modal modal-profile" data-modal="modalProfile">
@@ -679,161 +731,193 @@
 	</div>
 	<!-- / Modal Transactions History -->
 
-	<!-- Modal Referrals -->
+	<!-- Modal Room -->
 	<div class="modal modal-room" data-modal="modalRoom">
 		<div class="modal__overlay">
 			<div class="modal__content">
 				<div class="modal__close"></div>
-
-				<div class="modal-room__header">
-					<div class="modal-room__prize">
-						<div class="modal-room__prize-img">
-							<picture>
-								<source srcset="./img/airpods.webp" type="image/webp">
-								<img loading="lazy" src="./img/airpods.jpg" width="48" height="48" alt="">
-							</picture>
+				<div class="modal-room__inner">
+					<!-- slots -->
+					<ul class="room-slots">
+						<li class="room-slots__slot">
+							<img class="ava ava-photo" src="./img/ava-1.jpg" alt="">
+							<!-- <span class="slot-num">1</span> -->
+						</li>
+						<li class="room-slots__slot">
+							<div class="ava ava-text ava--blue">
+								<span class="ava__name">AK</span>
+							</div>
+							<!-- <span class="slot-num">2</span> -->
+						</li>
+						<li class="room-slots__slot">
+							<div class="ava ava-text ava--green">
+								<span class="ava__name">SE</span>
+							</div>
+							<!-- <span class="slot-num">3</span> -->
+						</li>
+						<li class="room-slots__slot">
+							<div class="user-active">
+								<img class="ava ava-photo ava-pulse" src="./img/ava-3.jpg" alt="">
+								<div class="user-active__tooltip">your slot</div>
+							</div>
+							<!-- <span class="slot-num">4</span> -->
+						</li>
+						<li class="room-slots__slot">
+							<div class="ava ava-text ava--purple">
+								<span class="ava__name">IR</span>
+							</div>
+							<!-- <span class="slot-num">5</span> -->
+						</li>
+						<li class="room-slots__slot">
+							<img class="ava ava-photo" src="./img/ava-4.jpg" alt="">
+							<!-- <span class="slot-num">6</span> -->
+						</li>
+						<li class="room-slots__slot"><span class="slot-num">7</span></li>
+						<li class="room-slots__slot"><span class="slot-num">8</span></li>
+						<li class="room-slots__slot"><span class="slot-num">9</span></li>
+						<li class="room-slots__slot"><span class="slot-num">10</span></li>
+						<li class="room-slots__slot"><span class="slot-num">11</span></li>
+						<li class="room-slots__slot"><span class="slot-num">12</span></li>
+						<li class="room-slots__slot"><span class="slot-num">13</span></li>
+						<li class="room-slots__slot"><span class="slot-num">14</span></li>
+						<li class="room-slots__slot"><span class="slot-num">15</span></li>
+						<li class="room-slots__slot"><span class="slot-num">16</span></li>
+						<li class="room-slots__slot"><span class="slot-num">17</span></li>
+						<li class="room-slots__slot"><span class="slot-num">18</span></li>
+						<li class="room-slots__slot"><span class="slot-num">19</span></li>
+						<li class="room-slots__slot"><span class="slot-num">20</span></li>
+						<li class="room-slots__slot"><span class="slot-num">21</span></li>
+						<li class="room-slots__slot"><span class="slot-num">22</span></li>
+						<li class="room-slots__slot"><span class="slot-num">23</span></li>
+						<li class="room-slots__slot"><span class="slot-num">24</span></li>
+						<li class="room-slots__slot"><span class="slot-num">25</span></li>
+						<li class="room-slots__slot"><span class="slot-num">26</span></li>
+						<li class="room-slots__slot"><span class="slot-num">27</span></li>
+						<li class="room-slots__slot"><span class="slot-num">28</span></li>
+						<li class="room-slots__slot"><span class="slot-num">29</span></li>
+						<li class="room-slots__slot"><span class="slot-num">30</span></li>
+						<li class="room-slots__slot"><span class="slot-num">31</span></li>
+						<li class="room-slots__slot"><span class="slot-num">32</span></li>
+						<li class="room-slots__slot"><span class="slot-num">33</span></li>
+						<li class="room-slots__slot"><span class="slot-num">34</span></li>
+						<li class="room-slots__slot"><span class="slot-num">35</span></li>
+						<li class="room-slots__slot"><span class="slot-num">36</span></li>
+						<li class="room-slots__slot"><span class="slot-num">37</span></li>
+						<li class="room-slots__slot"><span class="slot-num">38</span></li>
+						<li class="room-slots__slot"><span class="slot-num">39</span></li>
+						<li class="room-slots__slot"><span class="slot-num">40</span></li>
+						<li class="room-slots__slot"><span class="slot-num">41</span></li>
+						<li class="room-slots__slot"><span class="slot-num">42</span></li>
+						<li class="room-slots__slot"><span class="slot-num">43</span></li>
+						<li class="room-slots__slot"><span class="slot-num">44</span></li>
+						<li class="room-slots__slot"><span class="slot-num">45</span></li>
+						<li class="room-slots__slot"><span class="slot-num">46</span></li>
+						<li class="room-slots__slot"><span class="slot-num">47</span></li>
+						<li class="room-slots__slot"><span class="slot-num">48</span></li>
+						<li class="room-slots__slot"><span class="slot-num">49</span></li>
+						<li class="room-slots__slot"><span class="slot-num">50</span></li>
+						<li class="room-slots__slot"><span class="slot-num">51</span></li>
+						<li class="room-slots__slot"><span class="slot-num">52</span></li>
+						<li class="room-slots__slot"><span class="slot-num">53</span></li>
+						<li class="room-slots__slot"><span class="slot-num">54</span></li>
+						<li class="room-slots__slot"><span class="slot-num">55</span></li>
+						<li class="room-slots__slot"><span class="slot-num">56</span></li>
+						<li class="room-slots__slot"><span class="slot-num">57</span></li>
+						<li class="room-slots__slot"><span class="slot-num">58</span></li>
+						<li class="room-slots__slot"><span class="slot-num">59</span></li>
+						<li class="room-slots__slot"><span class="slot-num">60</span></li>
+						<li class="room-slots__slot"><span class="slot-num">61</span></li>
+						<li class="room-slots__slot"><span class="slot-num">62</span></li>
+						<li class="room-slots__slot"><span class="slot-num">63</span></li>
+						<li class="room-slots__slot"><span class="slot-num">64</span></li>
+						<li class="room-slots__slot"><span class="slot-num">65</span></li>
+						<li class="room-slots__slot"><span class="slot-num">66</span></li>
+						<li class="room-slots__slot"><span class="slot-num">67</span></li>
+						<li class="room-slots__slot"><span class="slot-num">68</span></li>
+						<li class="room-slots__slot"><span class="slot-num">69</span></li>
+						<li class="room-slots__slot"><span class="slot-num">70</span></li>
+						<li class="room-slots__slot"><span class="slot-num">71</span></li>
+						<li class="room-slots__slot"><span class="slot-num">72</span></li>
+						<li class="room-slots__slot"><span class="slot-num">73</span></li>
+						<li class="room-slots__slot"><span class="slot-num">74</span></li>
+						<li class="room-slots__slot"><span class="slot-num">75</span></li>
+						<li class="room-slots__slot"><span class="slot-num">76</span></li>
+						<li class="room-slots__slot"><span class="slot-num">77</span></li>
+						<li class="room-slots__slot"><span class="slot-num">78</span></li>
+						<li class="room-slots__slot"><span class="slot-num">79</span></li>
+						<li class="room-slots__slot"><span class="slot-num">80</span></li>
+						<li class="room-slots__slot"><span class="slot-num">81</span></li>
+						<li class="room-slots__slot"><span class="slot-num">82</span></li>
+						<li class="room-slots__slot"><span class="slot-num">83</span></li>
+						<li class="room-slots__slot"><span class="slot-num">84</span></li>
+						<li class="room-slots__slot"><span class="slot-num">85</span></li>
+						<li class="room-slots__slot"><span class="slot-num">86</span></li>
+						<li class="room-slots__slot"><span class="slot-num">87</span></li>
+						<li class="room-slots__slot"><span class="slot-num">88</span></li>
+						<li class="room-slots__slot"><span class="slot-num">89</span></li>
+						<li class="room-slots__slot"><span class="slot-num">90</span></li>
+						<li class="room-slots__slot"><span class="slot-num">91</span></li>
+						<li class="room-slots__slot"><span class="slot-num">92</span></li>
+						<li class="room-slots__slot"><span class="slot-num">93</span></li>
+						<li class="room-slots__slot"><span class="slot-num">94</span></li>
+						<li class="room-slots__slot"><span class="slot-num">95</span></li>
+						<li class="room-slots__slot"><span class="slot-num">96</span></li>
+						<li class="room-slots__slot"><span class="slot-num">97</span></li>
+						<li class="room-slots__slot"><span class="slot-num">98</span></li>
+						<li class="room-slots__slot"><span class="slot-num">99</span></li>
+						<li class="room-slots__slot"><span class="slot-num">100</span></li>
+					</ul>
+					<!-- details -->
+					<div class="modal-room__details">
+						<div class="modal-room__prize">
+							<div class="modal-room__prize-img">
+								<picture>
+									<source srcset="./img/airpods.webp" type="image/webp">
+									<img loading="lazy" src="./img/airpods.jpg" width="48" height="48" alt="">
+								</picture>
+							</div>
+							<div class="modal-room__prize-info">
+								<h4 class="modal-room__prize-name">AirPods #15</h4>
+								<p class="modal-room__prize-descr"><span class="modal-room__prize-timer">13d / 20:45:31</span></p>
+							</div>
 						</div>
-						<div class="modal-room__prize-info">
-							<h4 class="modal-room__prize-name">AirPods #15</h4>
-							<p class="modal-room__prize-descr"><span class="modal-room__prize-timer">13d 20:45:31</span></p>
+
+						<div class="modal-room__details-box">
+							<div class="modal-room__info">
+								<h3 class="modal-room__title">Details</h3>
+								<ul class="modal-room__details-list">
+									<li>250$ Cash Prize</li>
+									<li>All tickets to be unlock after drawing</li>
+									<li>25 slots maxfor one user in each room.</li>
+								</ul>
+							</div>
+
+							<!-- tikets counter -->
+							<div class="payment-form">
+								<!-- counter -->
+								<div class="payment-form__count">
+									<div class="payment-form__count-title">Balance 5 T <i class="ic-ticket ic-ticket--dark"></i></div>
+									<div class="counter">
+										<button class="counter__minus"></button>
+										<div class="counter__field">
+											<input type="number" class="counter__input" value="3">
+										</div>
+										<button class="counter__plus"></button>
+									</div>
+									<button type="button" class="btn-reset btn btn-anim btn-join">
+										<span btn__label>Join Now</span>
+										<span class="btn-anim__gradient"></span>
+									</button>
+								</div>
+							</div>
 						</div>
 					</div>
-					<button class="btn btn-join">Join Now</button>
 				</div>
 
-				<ul class="room-slots">
-					<li class="room-slots__slot">
-						<img class="ava ava-photo" src="./img/ava-1.jpg" alt="">
-						<!-- <span class="slot-num">1</span> -->
-					</li>
-					<li class="room-slots__slot">
-						<div class="ava ava-text ava--blue">
-							<span class="ava__name">AK</span>
-						</div>
-						<!-- <span class="slot-num">2</span> -->
-					</li>
-					<li class="room-slots__slot">
-						<div class="ava ava-text ava--green">
-							<span class="ava__name">SE</span>
-						</div>
-						<!-- <span class="slot-num">3</span> -->
-					</li>
-					<li class="room-slots__slot">
-						<div class="user-active">
-							<img class="ava ava-photo ava-pulse" src="./img/ava-3.jpg" alt="">
-							<div class="user-active__tooltip">your slot</div>
-						</div>
-						<!-- <span class="slot-num">4</span> -->
-					</li>
-					<li class="room-slots__slot">
-						<div class="ava ava-text ava--purple">
-							<span class="ava__name">IR</span>
-						</div>
-						<!-- <span class="slot-num">5</span> -->
-					</li>
-					<li class="room-slots__slot">
-						<img class="ava ava-photo" src="./img/ava-4.jpg" alt="">
-						<!-- <span class="slot-num">6</span> -->
-					</li>
-					<li class="room-slots__slot"><span class="slot-num">7</span></li>
-					<li class="room-slots__slot"><span class="slot-num">8</span></li>
-					<li class="room-slots__slot"><span class="slot-num">9</span></li>
-					<li class="room-slots__slot"><span class="slot-num">10</span></li>
-					<li class="room-slots__slot"><span class="slot-num">11</span></li>
-					<li class="room-slots__slot"><span class="slot-num">12</span></li>
-					<li class="room-slots__slot"><span class="slot-num">13</span></li>
-					<li class="room-slots__slot"><span class="slot-num">14</span></li>
-					<li class="room-slots__slot"><span class="slot-num">15</span></li>
-					<li class="room-slots__slot"><span class="slot-num">16</span></li>
-					<li class="room-slots__slot"><span class="slot-num">17</span></li>
-					<li class="room-slots__slot"><span class="slot-num">18</span></li>
-					<li class="room-slots__slot"><span class="slot-num">19</span></li>
-					<li class="room-slots__slot"><span class="slot-num">20</span></li>
-					<li class="room-slots__slot"><span class="slot-num">21</span></li>
-					<li class="room-slots__slot"><span class="slot-num">22</span></li>
-					<li class="room-slots__slot"><span class="slot-num">23</span></li>
-					<li class="room-slots__slot"><span class="slot-num">24</span></li>
-					<li class="room-slots__slot"><span class="slot-num">25</span></li>
-					<li class="room-slots__slot"><span class="slot-num">26</span></li>
-					<li class="room-slots__slot"><span class="slot-num">27</span></li>
-					<li class="room-slots__slot"><span class="slot-num">28</span></li>
-					<li class="room-slots__slot"><span class="slot-num">29</span></li>
-					<li class="room-slots__slot"><span class="slot-num">30</span></li>
-					<li class="room-slots__slot"><span class="slot-num">31</span></li>
-					<li class="room-slots__slot"><span class="slot-num">32</span></li>
-					<li class="room-slots__slot"><span class="slot-num">33</span></li>
-					<li class="room-slots__slot"><span class="slot-num">34</span></li>
-					<li class="room-slots__slot"><span class="slot-num">35</span></li>
-					<li class="room-slots__slot"><span class="slot-num">36</span></li>
-					<li class="room-slots__slot"><span class="slot-num">37</span></li>
-					<li class="room-slots__slot"><span class="slot-num">38</span></li>
-					<li class="room-slots__slot"><span class="slot-num">39</span></li>
-					<li class="room-slots__slot"><span class="slot-num">40</span></li>
-					<li class="room-slots__slot"><span class="slot-num">41</span></li>
-					<li class="room-slots__slot"><span class="slot-num">42</span></li>
-					<li class="room-slots__slot"><span class="slot-num">43</span></li>
-					<li class="room-slots__slot"><span class="slot-num">44</span></li>
-					<li class="room-slots__slot"><span class="slot-num">45</span></li>
-					<li class="room-slots__slot"><span class="slot-num">46</span></li>
-					<li class="room-slots__slot"><span class="slot-num">47</span></li>
-					<li class="room-slots__slot"><span class="slot-num">48</span></li>
-					<li class="room-slots__slot"><span class="slot-num">49</span></li>
-					<li class="room-slots__slot"><span class="slot-num">50</span></li>
-					<li class="room-slots__slot"><span class="slot-num">51</span></li>
-					<li class="room-slots__slot"><span class="slot-num">52</span></li>
-					<li class="room-slots__slot"><span class="slot-num">53</span></li>
-					<li class="room-slots__slot"><span class="slot-num">54</span></li>
-					<li class="room-slots__slot"><span class="slot-num">55</span></li>
-					<li class="room-slots__slot"><span class="slot-num">56</span></li>
-					<li class="room-slots__slot"><span class="slot-num">57</span></li>
-					<li class="room-slots__slot"><span class="slot-num">58</span></li>
-					<li class="room-slots__slot"><span class="slot-num">59</span></li>
-					<li class="room-slots__slot"><span class="slot-num">60</span></li>
-					<li class="room-slots__slot"><span class="slot-num">61</span></li>
-					<li class="room-slots__slot"><span class="slot-num">62</span></li>
-					<li class="room-slots__slot"><span class="slot-num">63</span></li>
-					<li class="room-slots__slot"><span class="slot-num">64</span></li>
-					<li class="room-slots__slot"><span class="slot-num">65</span></li>
-					<li class="room-slots__slot"><span class="slot-num">66</span></li>
-					<li class="room-slots__slot"><span class="slot-num">67</span></li>
-					<li class="room-slots__slot"><span class="slot-num">68</span></li>
-					<li class="room-slots__slot"><span class="slot-num">69</span></li>
-					<li class="room-slots__slot"><span class="slot-num">70</span></li>
-					<li class="room-slots__slot"><span class="slot-num">71</span></li>
-					<li class="room-slots__slot"><span class="slot-num">72</span></li>
-					<li class="room-slots__slot"><span class="slot-num">73</span></li>
-					<li class="room-slots__slot"><span class="slot-num">74</span></li>
-					<li class="room-slots__slot"><span class="slot-num">75</span></li>
-					<li class="room-slots__slot"><span class="slot-num">76</span></li>
-					<li class="room-slots__slot"><span class="slot-num">77</span></li>
-					<li class="room-slots__slot"><span class="slot-num">78</span></li>
-					<li class="room-slots__slot"><span class="slot-num">79</span></li>
-					<li class="room-slots__slot"><span class="slot-num">80</span></li>
-					<li class="room-slots__slot"><span class="slot-num">81</span></li>
-					<li class="room-slots__slot"><span class="slot-num">82</span></li>
-					<li class="room-slots__slot"><span class="slot-num">83</span></li>
-					<li class="room-slots__slot"><span class="slot-num">84</span></li>
-					<li class="room-slots__slot"><span class="slot-num">85</span></li>
-					<li class="room-slots__slot"><span class="slot-num">86</span></li>
-					<li class="room-slots__slot"><span class="slot-num">87</span></li>
-					<li class="room-slots__slot"><span class="slot-num">88</span></li>
-					<li class="room-slots__slot"><span class="slot-num">89</span></li>
-					<li class="room-slots__slot"><span class="slot-num">90</span></li>
-					<li class="room-slots__slot"><span class="slot-num">91</span></li>
-					<li class="room-slots__slot"><span class="slot-num">92</span></li>
-					<li class="room-slots__slot"><span class="slot-num">93</span></li>
-					<li class="room-slots__slot"><span class="slot-num">94</span></li>
-					<li class="room-slots__slot"><span class="slot-num">95</span></li>
-					<li class="room-slots__slot"><span class="slot-num">96</span></li>
-					<li class="room-slots__slot"><span class="slot-num">97</span></li>
-					<li class="room-slots__slot"><span class="slot-num">98</span></li>
-					<li class="room-slots__slot"><span class="slot-num">99</span></li>
-					<li class="room-slots__slot"><span class="slot-num">100</span></li>
-				</ul>
 			</div>
 		</div>
 	</div>
-	<!-- / Modal Referrals -->
+	<!-- / Modal Room -->
 
 	<!-- Modal Payment -->
 	<div class="modal modal-payment" data-modal="modalPayment">
@@ -866,7 +950,7 @@
 						<h4 class="payment__title">Payment methods:</h4>
 						<!-- payment-visa -->
 						<div class="payment__option">
-							<input type="radio" id="payment-visa" name="payment-method">
+							<input type="radio" id="payment-visa" name="payment-method" checked>
 							<label for="payment-visa" class="payment__label">
 								<div class="payment__logo">
 									<img src="img/icons/logo-visa.svg" class="payment__img" alt="Visa">
@@ -940,8 +1024,8 @@
 							<div class="counter">
 								<button class="counter__minus"></button>
 								<div class="counter__field">
-									<div class="ic-ticket ic-ticket--dark"></div>
-									<input type="text" class="counter__input" value="1">
+									<i class="ic-ticket ic-ticket--dark"></i>
+									<input type="number" class="counter__input" value="1">
 								</div>
 								<button class="counter__plus"></button>
 							</div>
@@ -966,7 +1050,7 @@
 							<div class="counter">
 								<button class="counter__minus"></button>
 								<div class="counter__field">
-									<div class="ic-ticket ic-ticket--dark"></div>
+									<i class="ic-ticket ic-ticket--dark"></i>
 									<input type="text" class="counter__input" value="1">
 								</div>
 								<button class="counter__plus"></button>
@@ -991,8 +1075,6 @@
 	<!-- / Modal Payment -->
 
 	<!----------- ./ Modals ------------->
-
-
 </body>
 
 </html>

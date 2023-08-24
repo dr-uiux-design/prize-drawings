@@ -46,20 +46,7 @@ $modal-anim: translateY(-200px);
     padding: $modal-pading;
     transition: transform 0.3s ease-in-out;
     position: relative;
-    /* Стилизация скролла */
-    &::-webkit-scrollbar {
-      width: 4px;
-      background: var(--gray-200);
-    }
-
-    &::-webkit-scrollbar-thumb {
-      background-color: var(--dark-800);
-      border-radius: 100px;
-    }
-
-    &::-webkit-scrollbar-thumb:hover {
-      background-color: var(--dark-800);
-    }
+    @include scrollbar__ver;
   }
 
   &__header {
@@ -126,7 +113,7 @@ $modal-anim: translateY(-200px);
   }
 
   .modal__content {
-    padding: 24px 32px;
+    padding: 24px;
     padding-bottom: 48px;
     border-radius: 8px;
   }

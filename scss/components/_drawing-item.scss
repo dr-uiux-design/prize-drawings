@@ -1,0 +1,133 @@
+//! Drawing-item
+.drawing-item {
+  cursor: pointer;
+  background: #fff;
+  border: 1px solid rgba(#000, 0.12);
+  border-radius: 16px;
+  padding: 16px;
+  display: flex !important;
+  align-items: center;
+  position: relative;
+  transition: all 0.2s ease-in-out;
+
+  &:not(:last-child) {
+    margin-bottom: 16px;
+  }
+
+  //! .drawing-item__img
+  &__img {
+    flex-shrink: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 64px;
+    height: 64px;
+    border: 1px solid rgba(0, 0, 0, 0.15);
+    border-radius: 12px;
+    margin-right: 16px;
+    img {
+      width: 48px;
+      height: 48px;
+    }
+  }
+
+  //! .drawing-item__info
+  &__info {
+    padding-right: 16px;
+  }
+
+  //! .drawing-item__name
+  &__name {
+    color: var(--dark-800);
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 120%;
+    margin-bottom: 4px;
+
+    @media (max-width: 390px) {
+      font-size: 16px;
+    }
+  }
+
+  //! .drawing-item__descr
+  &__descr {
+    color: var(--gray-500);
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 140%;
+
+    @media (max-width: 390px) {
+      span {
+        display: block;
+      }
+    }
+  }
+
+  .drawing-data {
+    flex-direction: column;
+  }
+
+  //! .drawing-item__arrow
+  &__arrow {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 48px;
+    height: 48px;
+    border: 1px solid rgba(0, 0, 0, 0.15);
+    border-radius: 50%;
+    position: absolute;
+    right: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+    transition: all 0.3s ease-in-out;
+
+    @media (max-width: 480px) {
+      // width: 40px;
+      // height: 40px;
+      display: none;
+    }
+  }
+
+  // Small Item
+  &--small {
+    flex-shrink: 0;
+    padding: 16px;
+    border: none;
+
+    .drawing-item__name {
+      font-size: 16px;
+      font-weight: 600;
+    }
+  }
+}
+
+//! Item Hover
+.drawing-item--hover {
+  &:hover {
+    border: 1px solid transparent;
+    box-shadow: 0px 24px 40px rgba(77, 83, 103, 0.24);
+    transform: translateY(-8px);
+  }
+}
+
+.drawing-item--hover:hover .drawing-item__arrow {
+  color: #fff;
+  border: 1px solid transparent;
+  background-color: var(--dark-800);
+}
+
+@media (max-width: 1024px) {
+  .drawings-item:hover {
+    transform: none !important;
+    box-shadow: none !important;
+  }
+
+  .drawings-item:hover .drawings-item__arrow {
+    border: 1px solid rgba(0, 0, 0, 0.15);
+    background-color: transparent;
+    svg {
+      color: var(--dark-800);
+    }
+  }
+}

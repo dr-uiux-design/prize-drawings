@@ -14,15 +14,12 @@
 
   &__right {
     @extend .header__container;
+    gap: 16px;
 
     @media (max-width: 480px) {
       width: 100%;
       justify-content: space-between;
     }
-  }
-
-  &__balance {
-    margin-right: 16px;
   }
 }
 
@@ -69,11 +66,11 @@
     justify-content: center;
     width: 40px;
     height: 100%;
-    background: var(--dark-800);
+    background: var(--main-color);
     transition: background-color 0.3s ease-in-out;
 
     &:hover {
-      background: var(--dark-600);
+      background: var(--dark-700);
     }
 
     svg {
@@ -93,9 +90,9 @@
   cursor: pointer;
   position: relative;
 
-  &__ava {
-    margin-right: 12px;
-  }
+  // &__ava {
+
+  // }
 
   &__name {
     font-weight: 600;
@@ -113,7 +110,7 @@
   .popup-settings {
     position: absolute;
     top: 100%;
-    left: -64px;
+    right: 0;
   }
 
   &.active .user-account__settings {

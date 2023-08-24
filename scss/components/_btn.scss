@@ -1,13 +1,13 @@
-$btn-hight: 3.5rem;
+$btn-hight: 56px;
+$btn-lh: 56px;
 $btn-padding: 0 2rem;
 $btn-color: #fff;
 $btn-bg: var(--main-color);
 $btn-boder: 1px solid transparent;
-$btn-br: 8px;
+$btn-br: 100px;
 $btn-ff: var(--font-default);
-$btn-fz: 16px;
-$btn-fw: 600;
-$btn-lh: 1.2;
+$btn-fz: 17px;
+$btn-fw: 500;
 $btn-bxs: none;
 
 .btn {
@@ -21,6 +21,7 @@ $btn-bxs: none;
   font-size: $btn-fz;
   font-weight: $btn-fw;
   line-height: $btn-lh;
+  text-align: center;
   text-decoration: none;
   box-shadow: $btn-bxs;
   transition: all 0.35s ease-in-out;
@@ -32,6 +33,7 @@ $btn-bxs: none;
   gap: 8px;
 
   &:hover {
+    text-decoration: none;
     opacity: 0.8;
   }
 

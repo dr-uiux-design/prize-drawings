@@ -1,0 +1,7 @@
+.drawing-winner {
+  @extend .drawing-date;
+  &--small {
+    @extend .drawing-date--small;
+    display: inline-block;
+  }
+}

@@ -1,24 +1,31 @@
 /* ------------------- COMPONENTS -------------------- */
 @import "./components/spaces";
 @import "./components/btn";
-@import "./components/card-prize";
+@import "./components/back-page-link";
+@import "./components/btn-animation";
 @import "./components/avatars";
 @import "./components/slick";
 @import "./components/modal";
 @import "./components/icons";
+@import "./components/pagination";
+@import "./components/drawing-item";
+@import "./components/drawing-date";
+@import "./components/drawing-winner";
+@import "./components/status-dot";
 
 /* ------------------- Form -------------------- */
 @import "./components/form/form";
 @import "./components/form/input";
 @import "./components/form/checkbox";
 @import "./components/form/radio";
-@import "./components/pagination";
 
 // Profile Settings
 @import "./components/profile-settings/profile-form";
 @import "./components/profile-settings/referrals-form";
 @import "./components/profile-settings/transaсtions";
 
+// Modals
+@import "./components/modal-profile";
 @import "./components/modal-room";
 @import "./components/modal-info";
 @import "./components/modal-payment";
