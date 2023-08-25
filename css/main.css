@@ -3666,6 +3666,12 @@ input[type=radio]:checked + .payment__label .payment__circle::before {
     border: 1px solid var(--dark-800);
     color: var(--dark-800);
   }
+  .card-prize__info-ticket svg {
+    fill: var(--dark-800);
+  }
+  .card-prize__ticket {
+    background: url("../img/icons/ic-ticket_dark.svg") no-repeat center;
+  }
   .card-prize__info-users .ava {
     width: 48px;
     height: 48px;
@@ -3680,7 +3686,7 @@ input[type=radio]:checked + .payment__label .payment__circle::before {
             transform: none !important;
   }
   .card-prize .coming-soon {
-    background: rgba(255, 255, 255, 0.8);
+    background: rgba(255, 255, 255, 0.85);
   }
   .card-prize .coming-soon__text {
     color: var(--dark-800);
